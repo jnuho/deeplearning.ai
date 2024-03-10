@@ -20,7 +20,7 @@ def move_file(file_name, folder_name):
 
 
 def clean():
-    temp_folder = '.haozeLaTeXtemp'
+    temp_folder = 'LaTeXtemp'
 
     for file in os.listdir(os.getcwd()):
         if file.endswith('.aux') or file.endswith('.log'):
