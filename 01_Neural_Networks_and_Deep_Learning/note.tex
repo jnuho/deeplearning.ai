@@ -8,6 +8,28 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{subfigure}
+\usepackage{listings}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
 
 \title{LaTex for Students}
 \author{Jun Ho Lee}
@@ -147,11 +169,11 @@
 \newpage
 \subsection{Logistic Regression}
 
-    Given $X$, want $\hat{Y} = P(Y=1 |X)$ where $X \in \mathbb{R}^{n_x}$\\
+    Given $x$, want $\hat{y} = P(y=1 |x)$ where $x \in \mathbb{R}^{n_x}$\\
 
-    Parameters: $\omega \in \mathbb{R}^{n_x}$ a $n_x$ dimensional vector, $b \in \mathbb{R}$ a real number.\\
+    Parameters: $w \in \mathbb{R}^{n_x}$ a $n_x$ dimensional vector, $b \in \mathbb{R}$ a real number.\\
 
-    Output $\hat{y} = \sigma(\omega^{T}X + b) = \sigma(z)$\\
+    Output $\hat{y} = \sigma(w^{T}x + b) = \sigma(z)$\\
 
     $\displaystyle \sigma (z)=\frac {1}{1+e^{-z}}$\\
 
@@ -183,11 +205,11 @@
 \newpage
 \subsection{Logistic Regression Cost Function}
 
-    To train the parameter $\omega$ and $b$ of a Logistic Regression Model, we need a cost function.\\
+    To train the parameter $w$ and $b$ of a Logistic Regression Model, we need a cost function.\\
 
-    $\hat{y} = \sigma{(\omega^{T}X + b)}$ where $\sigma(z) = \frac{1}{1+e^{-z}}$\\
+    $\hat{y} = \sigma{(w^{T}X + b)}$ where $\sigma(z) = \frac{1}{1+e^{-z}}$\\
 
-    $\hat{y}^{(i)} = \sigma{(\omega^{T}X^{(i)} + b)}$ where $\sigma(z^{(i)}) = \frac{1}{1+e^{{-z}^{(i)}}}$\\
+    $\hat{y}^{(i)} = \sigma{(w^{T}X^{(i)} + b)}$ where $\sigma(z^{(i)}) = \frac{1}{1+e^{{-z}^{(i)}}}$\\
 
     Given $\{(x^{(1)}, y^{(1)}), (x^{(2)}, y^{(2)}), \hdots, (x^{(m)}, y^{(m)})\}$, want $\hat{y}^{(i)} \approx y^{(i)}$. \\
 
@@ -197,11 +219,11 @@
 
     Cost function (for the entire training Examples):
 
-    $\displaystyle \mathcal{J}(\omega, b) = \frac{1}{m}\sum_{i=1}^{m} \mathcal{L}(\hat{y}^{(i)}, y^{(i)}) = -\frac{1}{m}\sum_{i=1}^{m} [y^{(i)}\log{\hat{y}^{(i)}} + (1-y^{(i)})\log{(1-\hat{y}^{(i)})}]$\\\\
+    $\displaystyle \mathcal{J}(w, b) = \frac{1}{m}\sum_{i=1}^{m} \mathcal{L}(\hat{y}^{(i)}, y^{(i)}) = -\frac{1}{m}\sum_{i=1}^{m} [y^{(i)}\log{\hat{y}^{(i)}} + (1-y^{(i)})\log{(1-\hat{y}^{(i)})}]$\\\\
 
     The loss function computes the error for a single training example; the cost function is the average of the loss functions of the entire training set.\\
 
-    In training logistic regression model, we will try to find $\omega$ and $b$ such that they minimize the Cost function $\mathcal{J}(\omega, b)$.\\
+    In training logistic regression model, we will try to find $w$ and $b$ such that they minimize the Cost function $\mathcal{J}(w, b)$.\\
 
     Logistic Regression can be seen as a very small Neural Network.\\
 
@@ -209,9 +231,9 @@
 \newpage
 \subsection{Gradient Descent}
 
-    $\displaystyle \mathcal{J}(\omega, b) = \frac{1}{m}\sum_{i=1}^{m} \mathcal{L}(\hat{y}^{(i)}, y^{(i)}) = -\frac{1}{m}\sum_{i=1}^{m} [y^{(i)}\log{\hat{y}^{(i)}} + (1-y^{(i)})\log{(1-\hat{y}^{(i)})}]$\\\\
+    $\displaystyle \mathcal{J}(w, b) = \frac{1}{m}\sum_{i=1}^{m} \mathcal{L}(\hat{y}^{(i)}, y^{(i)}) = -\frac{1}{m}\sum_{i=1}^{m} [y^{(i)}\log{\hat{y}^{(i)}} + (1-y^{(i)})\log{(1-\hat{y}^{(i)})}]$\\\\
 
-    Want to find $\omega$ and $b$ that minimize the Cost function $\mathcal{J}(\omega,b)$.
+    Want to find $w$ and $b$ that minimize the Cost function $\mathcal{J}(w,b)$.
 
     \begin{tikzpicture}
     \begin{axis}[
@@ -223,16 +245,16 @@
     \end{axis}
     \end{tikzpicture}\\
 
-    $\mathcal{J}(\omega,b)$ is a convex function with a single local optimum.\\
+    $\mathcal{J}(w,b)$ is a convex function with a single local optimum.\\
     No matter where you initialize the point, you should get to the same point (Global optimum).\\
 
     Repeat: \\
 
-        $\omega := \omega - \alpha \frac{\partial\mathcal{J}(\omega,b)}{\partial\omega}$\\
+        $w := w - \alpha \frac{\partial\mathcal{J}(w,b)}{\partial w}$\\
 
-        $\omega := \omega - \alpha d\omega$\\
+        $w := w - \alpha dw$\\
 
-        $b := b - \alpha \frac{\partial\mathcal{J}(\omega,b)}{\partial b}$\\
+        $b := b - \alpha \frac{\partial\mathcal{J}(w,b)}{\partial b}$\\
 
         $b := b - \alpha db$\\
 
@@ -362,11 +384,116 @@ The derivative of a final output variable with respect to various intermediate q
 \newpage
 \subsection{Logistic Regression Gradient Descent}
 
+Compute derivatives using Computation Graph(a bit overkill?) to implement/derive gradient descent for Logistic Regression.\\
 
+Logistic regression recap
+
+$z = w^{T}x +b$\\
+
+$\hat{y} = a = \sigma(z)$\\
+
+$\mathcal{L}(a,y) = -(ylog(a) + (1-y)log(1-a))$\\
+
+Computation graph:\\
+
+Given: $x_1$, $w_1$, $b_1$,  $x_2$, $w_2$, $b_2$\\
+
+% \fbox defaults text mode. Put '$' for math mode
+$\fbox{$z = w_1 x_1 + w_2 x_2 +b$}$
+$\rightarrow$
+$\fbox{$\hat y = a = \sigma(z)$}$
+$\rightarrow$
+$\fbox{$\mathcal{L}(a,y)$}$\\
+
+Modify $w$ and $b$ to reduce the loss $\mathcal{L}(a,y)$\\
+
+In order to find such $w$ and $b$, we compute the derivatives with respect to ?.\\
+
+$da = \frac{d\mathcal{L}(a,y)}{da} = -\frac{d}{da} (ylog(a) + (1-y)log(1-a)) = -\frac{y}{a} + \frac{1-y}{1-a}$\\
+
+$\fbox{dz} = \frac{d\mathcal{L}(a,y)}{dz} = \frac{d\mathcal{L}(a,y)}{da} \frac{da}{dz} = (-\frac{y}{a}+\frac{1-y}{1-a})\frac{da}{dz}= a-y$
+
+, where $\frac{da}{dz} = \frac{d}{dz}(\frac{1}{1+e^{-z}}) = \frac{e^{-z}}{(1+e^{-z})^2} = \frac{1}{1+e^{-z}}(1-\frac{1}{1+e^{-z}})= a(1-a)$\\
+
+Go backward to compute :\\
+
+$\fbox{$dw_1$} = \frac{\partial \mathcal{L}}{\partial w_1} =\frac{d\mathcal{L}(a,y)}{dw_1} =\frac{d\mathcal{L}(a,y)}{dz} \frac{dz}{dw_1}= x_1 dz$\\
+
+$\fbox{$dw_2$} = \frac{\partial \mathcal{L}}{\partial w_2} =\frac{d\mathcal{L}(a,y)}{dw_2} =\frac{d\mathcal{L}(a,y)}{dz} \frac{dz}{dw_2}= x_2 dz$\\
+
+$\fbox{db} = \frac{\partial \mathcal{L}}{\partial b} =\frac{d\mathcal{L}(a,y)}{db} =\frac{d\mathcal{L}(a,y)}{dz} \frac{dz}{db}= dz$\\\\
+
+Compute $dz$ to compute $dw_1$, $dw_2$, $db$ and do the update with gradient descent:\\
+
+$w_1 := w_1 - \alpha dw_1$\\
+
+$w_2 := w_2 - \alpha dw_2$\\
+
+$b := b - \alpha db $\\
+
+
+\newpage
+\subsection{Gradient Descent on $m$ Examples}
+
+$\mathcal{J}(w,b) = \frac{1}{m}\sum_{i=1}^{m}\mathcal{L}(a^{(i)},y^{(i)})$\\
+
+, where $a^{(i)} = \hat{y^{(i)}} = \sigma(z^{(i)}) = \sigma{(w^T x^{(i)} + b)}$\\
+
+$\frac{\partial}{\partial w_1} \mathcal{J}(w,b) =\frac{1}{m}\sum_{i=1}^{m} \frac{\partial}{\partial w_1}\mathcal{L}(a^{(i)},y^{(i)})= \frac{1}{m}\sum_{i=1}^{m} dw_1^{(i)}$ \\
+
+$\frac{\partial}{\partial w_2} \mathcal{J}(w,b) =\frac{1}{m}\sum_{i=1}^{m} \frac{\partial}{\partial w_2}\mathcal{L}(a^{(i)},y^{(i)})= \frac{1}{m}\sum_{i=1}^{m} dw_2^{(i)}$ \\
+
+$\frac{\partial}{\partial b} \mathcal{J}(w,b) =\frac{1}{m}\sum_{i=1}^{m} \frac{\partial}{\partial b}\mathcal{L}(a^{(i)},y^{(i)})= \frac{1}{m}\sum_{i=1}^{m} db^{(i)}$ \\\\\\
+
+
+Logistic regression on m examples:\\
+
+$J=0$; $dw_1 = 0$; $dw_2 = 0$; $db=0$\\
+
+for $i=1$ to $m$:\\
+$z^{(i)} = w^T x^{(i)} + b$\\
+$a^{(i)} = \sigma(z^{(i)})$\\
+$\mathcal{J} += -[y^{(i)} log(a^{(i)}) + (1-y^{(i)})log(1-a^{(i)})]$\\
+$dz^{(i)} = a^{(i)}- y^{(i)}$\\
+* The value of $dw_1$, $dw_2$, $db$ in the code is cumulative:\\
+$dw_1 += x_1^{(i)}dz^{(i)}$\\
+$dw_2 += x_2^{(i)}dz^{(i)}$\\
+$db += dz^{(i)}$\\
+
+
+$J/=m$\\
+$dw_1 /=m$\\
+$dw_2 /=m$\\
+$db /=m$\\
+
+Finally, after finishing calculations for all m examples, we update(implment one step of gradient descent):\\
+
+$w_1 := w_1 - \alpha dw_1$\\
+$w_2 := w_2 - \alpha dw_2$\\
+$b := b - \alpha db $\\
+
+We have to multiple steps of above gradient descent.\\
+
+It has two weaknesses: two for-loops (one for m training examples and another for features: $w_{(i)}$ where $i$ can be big.) $\rightarrow$ $\fbox{Vectorization!}$
+
+\newpage
+\subsection{Vectorization}
 
 \newpage
 \subsection{}
 
+\lstset{language=Python}
+\begin{lstlisting}
+from datetime import datetime
+
+def init():
+now = datetime.now()
+current_time = now.strftime("%H:%M:%S")
+print("Current Time =", current_time)
+
+if __name__ == "__main__":
+init()
+\end{lstlisting}
 
 \end{document}
 
