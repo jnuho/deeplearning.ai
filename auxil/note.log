@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.11)  22 MAR 2024 17:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.11)  25 MAR 2024 17:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -664,10 +664,6 @@ File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 ))
 Package: xfp 2024-02-18 L3 Floating point unit
 ))
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 13.
-
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
@@ -753,14 +749,14 @@ your preamble.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * bindingoffset: 14.45377pt
 * modes: 
-* h-part:(L,W,R)=(57.81621pt, 467.42169pt, 57.81621pt)
+* h-part:(L,W,R)=(50.58878pt, 481.87656pt, 50.58878pt)
 * v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=467.42169pt
+* \textwidth=481.87656pt
 * \textheight=700.50687pt
-* \oddsidemargin=-0.00002pt
-* \evensidemargin=-14.45378pt
+* \oddsidemargin=-7.22745pt
+* \evensidemargin=-21.68121pt
 * \topmargin=-37.0pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -769,7 +765,7 @@ your preamble.
 * \marginparwidth=65.0pt
 * \marginparsep=11.0pt
 * \columnsep=10.0pt
-* \skip\footins=11.69997pt plus 5.19942pt minus 2.60054pt
+* \skip\footins=12.59996pt plus 5.59938pt minus 2.80058pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -780,132 +776,75 @@ your preamble.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <18.72003> not available
-(Font)              size <17.28> substituted on input line 51.
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <20.16003> not available
+(Font)              size <20.74> substituted on input line 51.
 
 
-LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <18.72003> not available
-(Font)              size <17.28> substituted on input line 51.
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <20.16003> not available
+(Font)              size <20.74> substituted on input line 51.
 
 
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <15.59996> not available
-(Font)              size <14.4> substituted on input line 55.
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <16.79996> not available
+(Font)              size <17.28> substituted on input line 55.
 
 
-LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <15.59996> not available
-(Font)              size <14.4> substituted on input line 55.
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <16.79996> not available
+(Font)              size <17.28> substituted on input line 55.
 
 
-LaTeX Font Warning: Font shape `TS1/cmr/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 72.
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
+ []
 
 [1
 
-{C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 84.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 84.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13> not available
-(Font)              size <12> substituted on input line 84.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
-(Font)              size <6> substituted on input line 84.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 84.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 84.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 84.
+{C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 133.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 133
+.
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 84.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 133
+.
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
-
- []
-
-[2]
-
-LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <13> not available
-(Font)              size <12> substituted on input line 114.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--117
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 152--155
+Underfull \hbox (badness 10000) in paragraph at lines 163--166
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 156--159
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 160--168
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 171--174
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
-
- []
-
+LaTeX Font Info:    Calculating math sizes for size <9.79996> on input line 182
+.
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
+Underfull \hbox (badness 10000) in paragraph at lines 201--204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--183
+Underfull \hbox (badness 10000) in paragraph at lines 205--208
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 186--187
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 188--189
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
+Underfull \hbox (badness 10000) in paragraph at lines 209--217
 
  []
 
@@ -915,81 +854,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 218--219
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 220--223
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--223
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 256--258
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
@@ -1004,37 +903,102 @@ Underfull \hbox (badness 10000) in paragraph at lines 269--270
 
  []
 
-[7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 311--312
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 313--314
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 315--316
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--322
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
 
  []
 
-[9] [10]
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 305--307
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+
+ []
+
+[8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 364--365
 
  []
@@ -1054,88 +1018,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 370--371
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 377--378
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 379--380
+[10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--382
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
+Underfull \hbox (badness 10000) in paragraph at lines 417--418
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--386
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 387--388
-
- []
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 395--396
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 399--400
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 401--402
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 403--404
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 410--415
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 416--417
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 418--419
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 424--425
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
 
  []
 
@@ -1160,11 +1059,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 432--433
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 432--433
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 434--435
 
  []
@@ -1174,30 +1068,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 436--437
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 438--439
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 440--441
-
- []
-
 [12]
-LaTeX Font Info:    Calculating math sizes for size <15.59996> on input line 44
-4.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <15.59996> not available
-(Font)              size <14.4> substituted on input line 444.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <15.59996> not available
-(Font)              size <14.4> substituted on input line 444.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 446--447
+Underfull \hbox (badness 10000) in paragraph at lines 444--445
 
  []
 
@@ -1222,47 +1094,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 454--455
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 454--455
+Underfull \hbox (badness 10000) in paragraph at lines 456--457
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 454--455
+Underfull \hbox (badness 10000) in paragraph at lines 459--464
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--477
+Underfull \hbox (badness 10000) in paragraph at lines 467--468
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--477
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--477
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--477
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
 
  []
 
 
-Overfull \hbox (26.29999pt too wide) in paragraph at lines 459--478
-[]$[]$ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 459--478
+Underfull \hbox (badness 10000) in paragraph at lines 477--478
 
  []
 
@@ -1272,7 +1139,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 479--480
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 481--484
+Underfull \hbox (badness 10000) in paragraph at lines 481--482
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 481--482
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--484
 
  []
 
@@ -1281,15 +1158,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 485--486
 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 492--493
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--488
 
  []
 
-(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2024/02/21 1.10 listings language file
-)
-Underfull \hbox (badness 10000) in paragraph at lines 494--496
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 489--490
+
+ []
+
+[14]
+LaTeX Font Info:    Calculating math sizes for size <16.79996> on input line 49
+3.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <16.79996> not available
+(Font)              size <17.28> substituted on input line 493.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <16.79996> not available
+(Font)              size <17.28> substituted on input line 493.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 495--496
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--498
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
 
  []
 
@@ -1298,107 +1205,314 @@ Underfull \hbox (badness 10000) in paragraph at lines 503--504
 
  []
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 536--538
+
+Underfull \hbox (badness 10000) in paragraph at lines 503--504
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 539--540
+Underfull \hbox (badness 10000) in paragraph at lines 503--504
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 551--552
+Underfull \hbox (badness 10000) in paragraph at lines 506--507
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 563--570
+Underfull \hbox (badness 10000) in paragraph at lines 526--526
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--578
+Underfull \hbox (badness 10000) in paragraph at lines 526--526
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 598--599
-
- []
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 622--622
+Underfull \hbox (badness 10000) in paragraph at lines 526--526
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 622--622
+Underfull \hbox (badness 10000) in paragraph at lines 526--526
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 622--622
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 622--622
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 622--622
-
- []
-
-
-Overfull \hbox (26.29999pt too wide) in paragraph at lines 600--623
+Overfull \hbox (27.79999pt too wide) in paragraph at lines 508--527
 []$[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 600--623
-
- []
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 629--631
+Underfull \hbox (badness 10000) in paragraph at lines 508--527
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--639
+Underfull \hbox (badness 10000) in paragraph at lines 528--529
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 640--641
+Underfull \hbox (badness 10000) in paragraph at lines 530--533
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 642--647
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
+
+ []
+
+[15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 541--542
+
+ []
+
+(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+)
+Underfull \hbox (badness 10000) in paragraph at lines 543--545
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 648--657
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <12.77509> not available
+(Font)              size <12> substituted on input line 545.
+
+
+LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <12.77509> not available
+(Font)              size <12> substituted on input line 545.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 552--553
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 585--587
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 658--659
+Underfull \hbox (badness 10000) in paragraph at lines 588--589
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 660--668
+Underfull \hbox (badness 10000) in paragraph at lines 600--601
 
  []
 
-[17] (C:/Users\user\deeplearning.ai\auxil\note.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 612--619
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--627
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--671
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--671
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--671
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--671
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--671
+
+ []
+
+
+Overfull \hbox (27.79999pt too wide) in paragraph at lines 649--672
+[]$[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--672
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 678--680
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 681--688
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 689--690
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 691--696
+
+ []
+
+
+Overfull \hbox (33.45605pt too wide) in paragraph at lines 697--706
+[]$\OML/cmm/m/it/14.4 Z \OT1/cmr/m/n/14.4 = \OML/cmm/m/it/14.4 w[]X \OT1/cmr/m/
+n/14.4 + \OML/cmm/m/it/14.4 b \OT1/cmr/m/n/14.4 = [] = []$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 697--706
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 707--708
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 709--717
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 730--734
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 735--738
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 739--742
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 743--747
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 769--769
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 769--769
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 769--769
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 769--769
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 769--769
+
+ []
+
+
+Overfull \hbox (27.79999pt too wide) in paragraph at lines 748--770
+[]$[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 748--770
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 772--773
+
+ []
+
+
+Overfull \hbox (32.07971pt too wide) in paragraph at lines 774--788
+[]$\OML/cmm/m/it/14.4 dw \OT1/cmr/m/n/14.4 = []\OML/cmm/m/it/14.4 Xdz[] \OT1/cm
+r/m/n/14.4 = [] [] [] = [] []$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 774--788
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 790--791
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 792--793
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 794--795
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 796--797
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 798--799
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 800--801
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 802--803
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 804--805
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 806--807
+
+ []
+
+[22] [23] (C:/Users\user\deeplearning.ai\auxil\note.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1406,37 +1520,36 @@ L3 programming layer <2024-02-20>
 
 
 LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 1.44003pt have occurred.
+(Font)              up to 0.77509pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 26675 strings out of 474436
- 666546 string characters out of 5742426
- 1969190 words of memory out of 5000000
- 48597 multiletter control sequences out of 15000+600000
- 569089 words of font info for 78 fonts, out of 8000000 for 9000
+ 26769 strings out of 474436
+ 668434 string characters out of 5742426
+ 1967190 words of memory out of 5000000
+ 48696 multiletter control sequences out of 15000+600000
+ 568547 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,17n,107p,724b,2354s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
-200.pk><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+440.pk><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmbx12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmex10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmmi12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/user/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/user/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/user/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/user/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/user/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Use
-rs/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
-<C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cms
-y9.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmtt12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/symbols/msbm10.pfb>
-Output written on C:/Users\user\deeplearning.ai\note.pdf (17 pages, 209376 byte
+/public/amsfonts/cm/cmmi10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/user/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/user/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/user/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/user/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/use
+r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/U
+sers/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pf
+b><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mtt12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/symbols/msbm10.pfb>
+Output written on C:/Users\user\deeplearning.ai\note.pdf (23 pages, 213731 byte
 s).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
+ 144 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
