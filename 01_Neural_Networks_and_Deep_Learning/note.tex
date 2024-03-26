@@ -203,14 +203,14 @@ Scale drives deep learning progress.
     Logistic regression is an algorithm for binary classification.\\
 
     m training examples
-    $\{(x^{(1)}, y^{(1)}), (x^{(2)}, y^{(2)}), \hdots, (x^{(m)}, y^{(m)})\}$ \\
-    where $x^{(i)} \in \mathbb{R}^{n_x}$ and $y^{(i)} \in \{0,1\}$ for $i \in [1,m]$ \\
+    $\{(X^{(1)}, Y^{(1)}), (X^{(2)}, Y^{(2)}), \hdots, (X^{(m)}, Y^{(m)})\}$ \\
+    where $X^{(i)} \in \mathbb{R}^{n_x}$ and $Y^{(i)} \in \{0,1\}$ for $i \in [1,m]$ \\
 
     $X =
     \begin{bmatrix}
-        \vdots & \vdots & \vdots \\
-        X^{(1)} & X^{(1)} & X^{(m)} \\
-        \vdots & \vdots & \vdots \\
+        \vdots & \vdots & \vdots & \vdots\\
+        X^{(1)} & X^{(2)} & \dots & X^{(m)} \\
+        \vdots & \vdots & \vdots & \vdots\\
     \end{bmatrix}
     \in \mathbb{R}^{n_x \times m}
     $\\
@@ -307,13 +307,9 @@ Scale drives deep learning progress.
 
     Repeat: \\
 
-        $w := w - \alpha \frac{\partial\mathcal{J}(w,b)}{\partial w}$\\
+        $w := w - \alpha \frac{\partial\mathcal{J}(w,b)}{\partial w} = w - \alpha dw$\\
 
-        $w := w - \alpha dw$\\
-
-        $b := b - \alpha \frac{\partial\mathcal{J}(w,b)}{\partial b}$\\
-
-        $b := b - \alpha db$\\
+        $b := b - \alpha \frac{\partial\mathcal{J}(w,b)}{\partial b} = b - \alpha db$\\
 
         where $\alpha$ is the learning rate.\\
 
@@ -333,7 +329,6 @@ Scale drives deep learning progress.
 
     $\frac{df(a)}{da} = \frac{d}{da} f(a)$
 
-\newpage
 \subsection{More Derivative Examples}
 
     \begin{tikzpicture}
@@ -441,36 +436,41 @@ The derivative of a final output variable with respect to various intermediate q
 \newpage
 \subsection{Logistic Regression Gradient Descent}
 
+On a single $i^{th}$ training example, $x^{(i)}$\\
+
 Compute derivatives using Computation Graph(a bit overkill?) to implement/derive gradient descent for Logistic Regression.\\
 
-Logistic regression recap
+Logistic regression recap:\\
 
-$z = w^{T}x +b$\\
+$z^{(i)} = w^{T}x^{(i)} +b$\\
 
-$\hat{y} = a = \sigma(z)$\\
+$\hat{y^{(i)}} = a^{(i)} = \sigma(z^{(i)})$\\
 
-$\mathcal{L}(a,y) = -(ylog(a) + (1-y)log(1-a))$\\
+$\mathcal{L}(a^{(i)},y^{(i)}) = -(ylog(a^{(i)}) + (1-y^{(i)})log(1-a^{(i)}))$\\
 
-Computation graph:\\
-
-Given: $x_1$, $w_1$, $b_1$,  $x_2$, $w_2$, $b_2$\\
+Computation graph, given: $x_1$, $w_1$, $x_2$, $w_2$, $b$\\
 
 % \fbox defaults text mode. Put '$' for math mode
-$\fbox{$z = w_1 x_1 + w_2 x_2 +b$}$
+$\fbox{$z^{(i)} = w_1 x_1 + w_2 x_2 +b$}$
 $\rightarrow$
-$\fbox{$\hat y = a = \sigma(z)$}$
+$\fbox{$\hat y^{(i)} = a^{(i)} = \sigma(z^{(i)})$}$
 $\rightarrow$
-$\fbox{$\mathcal{L}(a,y)$}$\\
+$\fbox{$\mathcal{L}(a^{(i)},y^{(i)})$}$\\
 
-Modify $w$ and $b$ to reduce the loss $\mathcal{L}(a,y)$\\
+, where $x^{(i)}= \begin{bmatrix}
+x_1\\
+x_2\\
+\end{bmatrix}$\\
 
-In order to find such $w$ and $b$, we compute the derivatives with respect to ?.\\
+Modify $w$ and $b$ to reduce the loss $\mathcal{L}(a^{(i)},y^{(i)})$. In order to find such $w$ and $b$, we compute the derivatives with respect to $\mathcal{L}(a^{(i)},y^{(i)})$.\\
 
-$da = \frac{d\mathcal{L}(a,y)}{da} = -\frac{d}{da} (ylog(a) + (1-y)log(1-a)) = -\frac{y}{a} + \frac{1-y}{1-a}$\\
+$\fbox{$da^{(i)}$}= \frac{d\mathcal{L}(a^{(i)},y^{(i)})}{da} = -\frac{d}{da} (y^{(i)}log(a^{(i)}) + (1-y^{(i)})log(1-a^{(i)})) = -\frac{y^{(i)}}{a^{(i)}} + \frac{1-y^{(i)}}{1-a^{(i)}}$\\
 
-$\fbox{dz} = \frac{d\mathcal{L}(a,y)}{dz} = \frac{d\mathcal{L}(a,y)}{da} \frac{da}{dz} = (-\frac{y}{a}+\frac{1-y}{1-a})\frac{da}{dz}= a-y$
+$\fbox{$dz^{(i)}$} = \frac{d\mathcal{L}(a^{(i)},y^{(i)})}{dz} = \frac{d\mathcal{L}(a^{(i)},y^{(i)})}{da} \frac{da}{dz} = (-\frac{y^{(i)}}{a^{(i)}}+\frac{1-y^{(i)}}{1-a^{(i)}})\frac{da}{dz}= a^{(i)}-y^{(i)}$
 
-, where $\frac{da}{dz} = \frac{d}{dz}(\frac{1}{1+e^{-z}}) = \frac{e^{-z}}{(1+e^{-z})^2} = \frac{1}{1+e^{-z}}(1-\frac{1}{1+e^{-z}})= a(1-a)$\\
+, where $\frac{da}{dz} = \frac{d}{dz}(\frac{1}{1+e^{-z^{(i)}}}) = \frac{e^{-z^{(i)}}}{(1+e^{-z^{(i)}})^2} = \frac{1}{1+e^{-z^{(i)}}}(1-\frac{1}{1+e^{-z^{(i)}}})= a^{(i)}(1-a^{(i)})$\\
+
+\newpage
 
 Go backward to compute :\\
 
@@ -480,7 +480,7 @@ $\fbox{$dw_2$} = \frac{\partial \mathcal{L}}{\partial w_2} =\frac{d\mathcal{L}(a
 
 $\fbox{db} = \frac{\partial \mathcal{L}}{\partial b} =\frac{d\mathcal{L}(a,y)}{db} =\frac{d\mathcal{L}(a,y)}{dz} \frac{dz}{db}= dz$\\\\
 
-Compute $dz$ to compute $dw_1$, $dw_2$, $db$ and do the update with gradient descent:\\
+Compute $dz$ to compute $dw_1$, $dw_2$, $db$ and update with gradient descent:\\
 
 $w_1 := w_1 - \alpha dw_1$\\
 
@@ -506,7 +506,7 @@ $\frac{\partial}{\partial b} \mathcal{J}(w,b) =\frac{1}{m}\sum_{i=1}^{m} \frac{\
 Logistic regression on m examples:\\
 
 $\noindent\fbox{%
-    \parbox{\textwidth}{%
+\parbox{\textwidth}{%
 $J=0$; $dw_1 = 0$; $dw_2 = 0$; $db=0$\\
 
 for $i=1$ to $m$:\\
@@ -518,20 +518,24 @@ $\indent$ $dz^{(i)} = a^{(i)}- y^{(i)}$\\
 * The value of $dw_1$, $dw_2$, $db$ in the code is cumulative:\\
 $\indent$ $dw_1 += x_1^{(i)}dz^{(i)}$\\
 $\indent$ $dw_2 += x_2^{(i)}dz^{(i)}$\\
+$\dots$\\
+$\indent$ $dw_{n_x} += x_{n_x}^{(i)}dz^{(i)}$\\
+
 $\indent$ $db += dz^{(i)}$\\
 
 $J/=m$,  $dw_1 /=m$,  $dw_2 /=m$,  $db /=m$\\
-
-    }%
+}%
 }$\\
 
 Finally, after finishing calculations for all m examples, we update(implment one step of gradient descent):\\
 
 $w_1 := w_1 - \alpha dw_1$\\
-$w_2 := w_2 - \alpha dw_2$\\
-$b := b - \alpha db $\\
+$\indent w_2 := w_2 - \alpha dw_2$\\
+$\indent \dots$ \\
+$\indent w_{n_x} := w_{n_x} - \alpha dw_{n_x}$\\
+$\indent b := b - \alpha db $\\
 
-We have to multiple steps of above gradient descent.\\
+We have to do multiple steps of above gradient descent.\\
 
 It has two weaknesses: two for-loops (one for m training examples and another for features: $w_{(i)}$ where $i$ can be big.) $\rightarrow$ $\fbox{Vectorization!}$
 
@@ -665,7 +669,7 @@ $\indent$ $dw_{n_x} += x_{n_x}^{(i)}dz^{(i)}$\\
 $\indent$ $dw_2 += x_2^{(i)}dz^{(i)}$\\
 $\indent$ $db += dz^{(i)}$\\
 
-$J/=m$,  $dw_1 /=m$,  $dw_2 /=m$,  $db /=m$\\
+$J/=m$,  $dw_1 /=m$,  $dw_2 /=m$, \dots, $dw_{n_x} /=m$, $db /=m$\\
 
     }%
 }$\\
@@ -749,22 +753,21 @@ $\noindent\fbox{%
 \parbox{\textwidth}{%
 $J=0$; $dw_1 = 0$; $dw_2 = 0$; $db=0$\\
 
-for $i=1$ to $m$:\\
+\textcolor{blue}{for $i=1$ to $m$:}\\
 $\indent$ $z^{(i)} = w^T x^{(i)} + b$\\
 $\indent$ $a^{(i)} = \sigma(z^{(i)})$\\
 $\indent$ $\mathcal{J} += -[y^{(i)} log(a^{(i)}) + (1-y^{(i)})log(1-a^{(i)})]$\\
 $\indent$ $dz^{(i)} = a^{(i)}- y^{(i)}$\\
 
-* The value of $dw_1$, $dw_2$, $db$ in the code is cumulative:\\
+\textcolor{red}{* The value of $dw_1$, $dw_2$, $\dots$, $dw_{n_x}$, $db$ in the code is cumulative:}\\
 $\indent$ $dw_1 += x_1^{(i)}dz^{(i)}$\\
 $\indent$ $dw_2 += x_2^{(i)}dz^{(i)}$\\
 $\dots$\\
 $\indent$ $dw_{n_x} += x_{n_x}^{(i)}dz^{(i)}$\\
 
-$\indent$ $dw_2 += x_2^{(i)}dz^{(i)}$\\
 $\indent$ $db += dz^{(i)}$\\
 
-$J/=m$,  $dw_1 /=m$,  $dw_2 /=m$,  $db /=m$\\
+$J/=m$,  $dw_1 /=m$,  $dw_2 /=m$, \dots, $dw_{n_x} /=m$, $db /=m$\\
     }%
 }$\\
 
@@ -772,9 +775,20 @@ $J/=m$,  $dw_1 /=m$,  $dw_2 /=m$,  $db /=m$\\
 $db = \frac{1}{m}\sum_{i=1}^{m}dz^{(i)} = \frac{1}{m}$np.sum($dz$)\\
 
 $dw = \frac{1}{m} X dz^{T} = \frac{1}{m} \begin{bmatrix}
-\vdots & \dots & \vdots \\
-X^{(1)} & \dots & X^{(m)}\\
-\vdots & \dots & \vdots \\
+x_1^{(1)} & x_1^{(2)} & \dots & x_1^{(m)}\\
+x_2^{(1)} & x_2^{(2)} & \dots & x_2^{(m)}\\
+\vdots & \vdots & \dots & \vdots \\
+x_{n_x}^{(1)} & x_{n_x}^{(2)} & \dots & x_{n_x}^{(m)}\\
+\end{bmatrix}
+\begin{bmatrix}
+dz^{(1)} \\
+\vdots \\
+dz^{(m)} \\
+\end{bmatrix}\\
+= \frac{1}{m} \begin{bmatrix}
+\vdots & \vdots & \dots & \vdots \\
+X^{(1)} & X^{(2)} & \dots & X^{(m)}\\
+\vdots & \vdots & \dots & \vdots \\
 \end{bmatrix}
 \begin{bmatrix}
 dz^{(1)} \\
@@ -795,15 +809,57 @@ $Z = w^T + b = np.dot(w.T,X) + b$\\
 
 $A = \sigma(Z)$\\
 
-$dZ = A-Y$\\
+\textcolor{blue}{$dZ = A-Y$}\\
 
-$dw = \frac{1}{m} X dZ^T$\\
+\textcolor{red}{$dw = \frac{1}{m} X dZ^T$}\\
 
 $db = \frac{1}{m}$ np.sum($dZ$)\\
 
-$w := w-\alpha dw$\\
+Single Iteration of Gradient Descent for Logistic Regression: \\
+
+$w := w-\alpha dw$\
 
 $b := b-\alpha db$\\
+
+\newpage
+\subsection{Broadcasting in Python}
+
+Calories from Carbs, Proteins, Fats in 100g of different foods: \\
+
+$\begin{bmatrix}
+& Apples & Beef & Eggs & Potatoes \\
+Carb & 56.0 & 0.0 & 4.4 & 68.0 \\
+Protein & 1.2 & 104.0 & 52.0 & 8.0 \\
+Fat & 1.8 & 135.0 & 99.0 & 0.9 \\
+\end{bmatrix}$\\
+
+Calculate the percentage of calories for Carb, Potein, Fat:\\
+
+\lstset{language=Python}
+\begin{lstlisting}
+import numpy as np
+
+A = np.array[[56.0, 0.0, 4.4, 68.0],
+    [1.2, 104.0, 52.0, 8.0],
+    [1.8, 135.0, 99.0, 0.9]])
+print(A)
+
+# sum vertically(axis=0)
+cal = A.sum(axis=0)
+print(cal)
+
+# compute percentage
+percentage = 100* A/cal.reshape(1,4)
+print(percentage)
+\end{lstlisting}
+
+
+General Principle:\\
+
+$(m,n)$ matrix operation $\rightarrow$ (1,n),(1,m) $\rightarrow$ (m,n), (m,n)\\
+
+$(m,n)$ + real number $\mathbb{R}$ $\rightarrow$ (m+$\mathbb{R}$,n+$\mathbb{R}$)\\
+
 
 \newpage
 \subsection{}
