@@ -9,7 +9,7 @@
 \usepackage{pgfplots}
 \usepackage{subfigure}
 \usepackage{listings}
-\usepackage[fontsize=14pt]{fontsize}
+\usepackage[fontsize=13pt]{fontsize}
 \usepackage[a4paper,
             bindingoffset=.2in,
             left=.7in,
@@ -860,10 +860,56 @@ $(m,n)$ matrix operation $\rightarrow$ (1,n),(1,m) $\rightarrow$ (m,n), (m,n)\\
 
 $(m,n)$ + real number $\mathbb{R}$ $\rightarrow$ (m+$\mathbb{R}$,n+$\mathbb{R}$)\\
 
+\newpage
+\subsection{A Note on Python/Numpy Vectors}
+
+\lstset{language=Python}
+\begin{lstlisting}
+import numpy as np
+
+# Don't use this (rank 1 array):
+# a = np.random.randn(5)
+
+# Use this:
+a = np.random.randn(5,1)
+a = np.random.randn(1,5)
+assert(a.shape == (5,1))
+\end{lstlisting}
+
+
 
 \newpage
-\subsection{}
+\subsection{Explanation of Logistic Regression Cost Function(Optional)}
 
+
+Logistic regression cost function (1 example):\\
+
+If $y=1: P(y|x) = \hat{y}$\\
+If $y=0: P(y|x) = 1- \hat{y}$\\
+
+$P(y|x) = \hat{y} ^{y} (1-\hat{y})^{(1-y)}$\\
+
+$log P(y|x) = y \log \hat{y} + (1-y) \log (1-\hat{y})$\\
+
+
+Logistic regression cost function (m examples):\\
+
+$\log P(\text{labels in training set}) = \log \prod_{i=1}^{m} P(y^{(i)}|x^{(i)})$\\
+
+$= \sum_{i=1}^{m} \log P(y^{(i)}|x^{(i)})  = -\sum_{i=1}^{m}\mathcal{L}(\hat{y}^{(i)},y^{(i)})$\\
+
+Cost(minimize):\\
+
+$\mathcal{J}(w,b) = \frac{1}{m} \sum_{i=1}^{m}\mathcal{L}(\hat{y}^{(i)}, y^{(i)})$\\
+
+Minimizing the loss corresponds with maximizing $\log P(y|x)$.\\
+
+
+\newpage
+\subsection{Week2. Assignment}
+
+1. Python+Basics+With+Numpy+v3.ipynb\\
+2. Logistic+Regression+with+a+Neural+Network+mindset+v5.ipynb\\
 
 \end{document}
 
