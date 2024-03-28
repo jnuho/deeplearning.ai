@@ -1,0 +1,72 @@
+%! Author = user
+%! Date = 3/28/2024
+
+% Preamble
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{subfigure}
+\usepackage{listings}
+\usepackage[fontsize=13pt]{fontsize}
+\usepackage[a4paper,
+    bindingoffset=.2in,
+    left=.7in,
+    right=.7in,
+    top=1in,
+    bottom=1in,
+    footskip=.25in]{geometry}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+    language=Java,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=none,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=3
+}
+
+\title{LaTex for Students}
+\author{Jun Ho Lee}
+\date{March 28 2024}
+
+% Document
+\begin{document}
+
+\newpage
+\section{Linear Regression}
+
+$y = ax + b$
+
+Want to find optimal a and b that minimize the sum of squared residual. Since we want the line hat will give us the smallest sum of squares, this method for finding the best values for "a" and "b" is called "Least Squares".\\
+
+If we plot the sum of squared residuals vs. each rotation. we'd get a convex function. We pick the optimal point (optimal rotation)that minimize the sum of squared residuals.\\
+
+We want to minimize the squre of the distance between the observed values and the line.
+
+\begin{itemize}
+    \item{Use least-squares to fit a line to the data.}
+    \item{Calculate $R^2$}
+    \item{Calculate a $p-value$ for $R^2$.}
+\end{itemize}
+
+
+
+\newpage
+\subsection{}
+
+
+\end{document}
