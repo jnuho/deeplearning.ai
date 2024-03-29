@@ -227,6 +227,8 @@ Scale drives deep learning progress.
 \subsection{Logistic Regression}
 
     Given $x$, want $\hat{y} = P(y=1 |x)$ where $x \in \mathbb{R}^{n_x}$\\
+    
+    ($\hat{y}^{(i)} = \sigma(w^T x^{(i)} + b) = \sigma(z^{(i)})$ for $i = 1, 2, \dots ,m_{train}$)\\
 
     Parameters: $w \in \mathbb{R}^{n_x}$ a $n_x$ dimensional vector, $b \in \mathbb{R}$ a real number.\\
 
@@ -436,24 +438,25 @@ The derivative of a final output variable with respect to various intermediate q
 \newpage
 \subsection{Logistic Regression Gradient Descent}
 
-On a single $i^{th}$ training example, $x^{(i)}$\\
 
-Compute derivatives using Computation Graph(a bit overkill?) to implement/derive gradient descent for Logistic Regression.\\
+Compute derivatives using Computation Graph(a bit overkill?) to implement/derive gradient descent for Logistic Regression.
 
-Logistic regression recap:\\
+Logistic regression recap (for a single $i^{th}$ training example, $x^{(i)}$):
 
-$z^{(i)} = w^{T}x^{(i)} +b$\\
+$z^{(i)} = w^{T}x^{(i)} +b$
 
-$\hat{y^{(i)}} = a^{(i)} = \sigma(z^{(i)})$\\
+$\hat{y}^{(i)} = a^{(i)} = \sigma(z^{(i)})$
 
-$\mathcal{L}(a^{(i)},y^{(i)}) = -(ylog(a^{(i)}) + (1-y^{(i)})log(1-a^{(i)}))$\\
+$\mathcal{L}(a^{(i)},y^{(i)}) = -[y^{(i)}log(a^{(i)}) + (1-y^{(i)})log(1-a^{(i)})]$\\
 
-Computation graph, given: $x_1$, $w_1$, $x_2$, $w_2$, $b$\\
+$\mathcal{J}(w,b) = \frac{1}{m}\sum_{i=1}^{m}\mathcal{L}(a^{(i)},y^{(i)}) = -\frac{1}{m}\sum_{i=1}^{m} [y^{(i)}log(a^{(i)}) + (1-y^{(i)})log(1-a^{(i)})]$\\
+
+Computation graph, given: $x_1$, $w_1$, $x_2$, $w_2$, $b$
 
 % \fbox defaults text mode. Put '$' for math mode
 $\fbox{$z^{(i)} = w_1 x_1 + w_2 x_2 +b$}$
 $\rightarrow$
-$\fbox{$\hat y^{(i)} = a^{(i)} = \sigma(z^{(i)})$}$
+$\fbox{$\hat{y}^{(i)} = a^{(i)} = \sigma(z^{(i)})$}$
 $\rightarrow$
 $\fbox{$\mathcal{L}(a^{(i)},y^{(i)})$}$\\
 
@@ -462,7 +465,7 @@ x_1\\
 x_2\\
 \end{bmatrix}$\\
 
-Modify $w$ and $b$ to reduce the loss $\mathcal{L}(a^{(i)},y^{(i)})$. In order to find such $w$ and $b$, we compute the derivatives with respect to $\mathcal{L}(a^{(i)},y^{(i)})$.\\
+Modify $w$ and $b$ to reduce the loss $\mathcal{L}(a^{(i)},y^{(i)})$. In order to find such $w$ and $b$, we \textbf{compute the derivatives with respect to $\mathcal{L}(a^{(i)},y^{(i)})$.}\\
 
 $\fbox{$da^{(i)}$}= \frac{d\mathcal{L}(a^{(i)},y^{(i)})}{da} = -\frac{d}{da} (y^{(i)}log(a^{(i)}) + (1-y^{(i)})log(1-a^{(i)})) = -\frac{y^{(i)}}{a^{(i)}} + \frac{1-y^{(i)}}{1-a^{(i)}}$\\
 
@@ -494,13 +497,13 @@ $b := b - \alpha db $\\
 
 $\mathcal{J}(w,b) = \frac{1}{m}\sum_{i=1}^{m}\mathcal{L}(a^{(i)},y^{(i)})$\\
 
-, where $a^{(i)} = \hat{y^{(i)}} = \sigma(z^{(i)}) = \sigma{(w^T x^{(i)} + b)}$\\
+, where $a^{(i)} = \hat{y}^{(i)} = \sigma(z^{(i)}) = \sigma{(w^T x^{(i)} + b)}$\\
 
-$\frac{\partial}{\partial w_1} \mathcal{J}(w,b) =\frac{1}{m}\sum_{i=1}^{m} \frac{\partial}{\partial w_1}\mathcal{L}(a^{(i)},y^{(i)})= \frac{1}{m}\sum_{i=1}^{m} dw_1^{(i)}$ \\
+$dw_1 = \frac{\partial}{\partial w_1} \mathcal{J}(w,b) =\frac{1}{m}\sum_{i=1}^{m} \frac{\partial}{\partial w_1}\mathcal{L}(a^{(i)},y^{(i)})= \frac{1}{m}\sum_{i=1}^{m} dw_1^{(i)} = \frac{1}{m}\sum_{i=1}^m {x_1}^{(i)}dz^{(i)}$\\
 
-$\frac{\partial}{\partial w_2} \mathcal{J}(w,b) =\frac{1}{m}\sum_{i=1}^{m} \frac{\partial}{\partial w_2}\mathcal{L}(a^{(i)},y^{(i)})= \frac{1}{m}\sum_{i=1}^{m} dw_2^{(i)}$ \\
+$dw_2 = \frac{\partial}{\partial w_2} \mathcal{J}(w,b) =\frac{1}{m}\sum_{i=1}^{m} \frac{\partial}{\partial w_2}\mathcal{L}(a^{(i)},y^{(i)})= \frac{1}{m}\sum_{i=1}^{m} dw_2^{(i)} = \frac{1}{m}\sum_{i=1}^m {x_2}^{(i)}dz^{(i)}$ \\
 
-$\frac{\partial}{\partial b} \mathcal{J}(w,b) =\frac{1}{m}\sum_{i=1}^{m} \frac{\partial}{\partial b}\mathcal{L}(a^{(i)},y^{(i)})= \frac{1}{m}\sum_{i=1}^{m} db^{(i)}$ \\\\\\
+$db = \frac{\partial}{\partial b} \mathcal{J}(w,b) =\frac{1}{m}\sum_{i=1}^{m} \frac{\partial}{\partial b}\mathcal{L}(a^{(i)},y^{(i)})= \frac{1}{m}\sum_{i=1}^{m} db^{(i)}= \frac{1}{m}\sum_{i=1}^{m} dz^{(i)}$ \\\\\\
 
 
 Logistic regression on m examples:\\
@@ -510,34 +513,55 @@ $\noindent\fbox{%
 $J=0$; $dw_1 = 0$; $dw_2 = 0$; $db=0$\\
 
 for $i=1$ to $m$:\\
-$\indent$ $z^{(i)} = w^T x^{(i)} + b$\\
-$\indent$ $a^{(i)} = \sigma(z^{(i)})$\\
-$\indent$ $\mathcal{J} += -[y^{(i)} log(a^{(i)}) + (1-y^{(i)})log(1-a^{(i)})]$\\
-$\indent$ $dz^{(i)} = a^{(i)}- y^{(i)}$\\
+$\indent$ $\indent$ $z^{(i)} = w^T x^{(i)} + b$\\
+$\indent$ $\indent$ $a^{(i)} = \sigma(z^{(i)})$\\
+$\indent$ $\indent$ $\mathcal{J} += -[y^{(i)} log(a^{(i)}) + (1-y^{(i)})log(1-a^{(i)})]$\\
+$\indent$ $\indent$ $dz^{(i)} = a^{(i)}- y^{(i)}$\\
 
-* The value of $dw_1$, $dw_2$, $db$ in the code is cumulative:\\
-$\indent$ $dw_1 += x_1^{(i)}dz^{(i)}$\\
-$\indent$ $dw_2 += x_2^{(i)}dz^{(i)}$\\
-$\dots$\\
-$\indent$ $dw_{n_x} += x_{n_x}^{(i)}dz^{(i)}$\\
+$\indent$ $\indent$ * The value of $dw_1$, $dw_2$, $db$ in the code is cumulative:\\
+$\indent$ $\indent$ $dw_1 += x_1^{(i)}dz^{(i)}$\\
+$\indent$ $\indent$ $dw_2 += x_2^{(i)}dz^{(i)}$\\
+$\indent$ $\indent$ $\dots$\\
+$\indent$ $\indent$ $dw_{n_x} += x_{n_x}^{(i)}dz^{(i)}$\\
 
-$\indent$ $db += dz^{(i)}$\\
+$\indent$ $\indent$ $db += dz^{(i)}$\\
 
 $J/=m$,  $dw_1 /=m$,  $dw_2 /=m$,  $db /=m$\\
 }%
 }$\\
 
-Finally, after finishing calculations for all m examples, we update(implment one step of gradient descent):\\
+After the calculations for all $m$  examples, we update(1 step of gradient descent):\\
+$\indent$ $w_1 := w_1 - \alpha dw_1$\\
+$\indent$ $w_2 := w_2 - \alpha dw_2$\\
+$\indent$ $\dots$ \\
+$\indent$ $w_{n_x} := w_{n_x} - \alpha dw_{n_x}$\\
+$\indent$ $b := b - \alpha db $\\
 
-$w_1 := w_1 - \alpha dw_1$\\
-$\indent w_2 := w_2 - \alpha dw_2$\\
-$\indent \dots$ \\
-$\indent w_{n_x} := w_{n_x} - \alpha dw_{n_x}$\\
-$\indent b := b - \alpha db $\\
+We have to do multiple steps of above gradient descent.
 
-We have to do multiple steps of above gradient descent.\\
+It has two weaknesses: two for-loops (one for m training examples and another for features: $w_{(i)}$ where $i$ can be big.) $\rightarrow$ $\fbox{Vectorization!}$\\
 
-It has two weaknesses: two for-loops (one for m training examples and another for features: $w_{(i)}$ where $i$ can be big.) $\rightarrow$ $\fbox{Vectorization!}$
+In the context of logistic regression, forward and backward propagation are used to learn the model parameters. Here’s a brief overview:\\
+
+\textbf{Forward Propagation:}
+In forward propagation, you pass the input data through the model to get the prediction. For a batch of $m$ training examples, each of dimension $n$, the forward propagation is:
+
+    \begin{enumerate}
+        \item{Compute the linear combination of the input features and weights: $z=w^T X+b$.}
+        \item{Apply the sigmoid function to $z$ to get the predicted probabilities: $a=\sigma(z)$.}
+        \item{Compute the cost function $\mathcal{J}$, which is the average of the loss function $\mathcal{L}$ over all training examples.}
+    \end{enumerate}
+
+\textbf{Backward Propagation:}
+Backward propagation is used to update the model parameters (weights and bias) using the gradient of the cost function. It involves the following steps:
+
+    \begin{enumerate}
+        \item{Compute the derivative of the cost function $\mathcal{J}$ with respect to the predicted probabilities.}
+        \item{Compute the derivative of the predicted probabilities with respect to $z$.}
+        \item{Compute the derivative of $z$ with respect to the weights and bias.}
+        \item{Update the weights and bias using the computed derivatives.
+The goal of these steps is to minimize the cost function $\mathcal{J}$ by adjusting the model parameters. This process is \textbf{repeated for several iterations} or until the model's performance is satisfactory.}
+    \end{enumerate}
 
 \newpage
 \subsection{Vectorization}
@@ -645,8 +669,8 @@ u = np.abs(v) # absolute value
 u = np.maximum(v,0)
 u = v**2
 u = 1/v
-
 \end{lstlisting}
+
 
 Logistic regression derivatives\\
 
@@ -655,19 +679,19 @@ $\noindent\fbox{%
 $J=0$; $dw_1 = 0$; $dw_2 = 0$; $db=0$\\
 
 for $i=1$ to $m$:\\
-$\indent$ $z^{(i)} = w^T x^{(i)} + b$\\
-$\indent$ $a^{(i)} = \sigma(z^{(i)})$\\
-$\indent$ $\mathcal{J} += -[y^{(i)} log(a^{(i)}) + (1-y^{(i)})log(1-a^{(i)})]$\\
-$\indent$ $dz^{(i)} = a^{(i)}- y^{(i)}$\\
+$\indent$ $\indent$ $z^{(i)} = w^T x^{(i)} + b$\\
+$\indent$ $\indent$ $a^{(i)} = \sigma(z^{(i)})$\\
+$\indent$ $\indent$ $\mathcal{J} += -[y^{(i)} log(a^{(i)}) + (1-y^{(i)})log(1-a^{(i)})]$\\
+$\indent$ $\indent$ $dz^{(i)} = a^{(i)}- y^{(i)}$\\
 
-* The value of $dw_1$, $dw_2$, $db$ in the code is cumulative:\\
-$\indent$ $dw_1 += x_1^{(i)}dz^{(i)}$\\
-$\indent$ $dw_2 += x_2^{(i)}dz^{(i)}$\\
-$\dots$\\
-$\indent$ $dw_{n_x} += x_{n_x}^{(i)}dz^{(i)}$\\
+$\indent$ $\indent$ * The value of $dw_1$, $dw_2$, $db$ in the code is cumulative:\\
+$\indent$ $\indent$ $dw_1 += x_1^{(i)}dz^{(i)}$\\
+$\indent$ $\indent$ $dw_2 += x_2^{(i)}dz^{(i)}$\\
+$\indent$ $\indent$ $\dots$\\
+$\indent$ $\indent$ $dw_{n_x} += x_{n_x}^{(i)}dz^{(i)}$\\
 
-$\indent$ $dw_2 += x_2^{(i)}dz^{(i)}$\\
-$\indent$ $db += dz^{(i)}$\\
+$\indent$ $\indent$ $dw_2 += x_2^{(i)}dz^{(i)}$\\
+$\indent$ $\indent$ $db += dz^{(i)}$\\
 
 $J/=m$,  $dw_1 /=m$,  $dw_2 /=m$, \dots, $dw_{n_x} /=m$, $db /=m$\\
 
@@ -735,15 +759,12 @@ $dz^{(i)} = a^{(i)}- y^{(i)}$\\
 $dZ = \begin{bmatrix}
 dz^{(1)}, & \dots & , dz^{(m)} \\
 \end{bmatrix} $\\
-
 $A = \begin{bmatrix}
 a^{(1)}, & \dots & , a^{(m)} \\
 \end{bmatrix} $\\
-
 $Y = \begin{bmatrix}
 y^{(1)}, & \dots & , y^{(m)} \\
 \end{bmatrix} $\\
-
 $dZ = A-Y =
 \begin{bmatrix}
 a^{(1)} - y^{(1)}, & \dots & , a^{(m)}-y^{(m)} \\
@@ -753,19 +774,19 @@ $\noindent\fbox{%
 \parbox{\textwidth}{%
 $J=0$; $dw_1 = 0$; $dw_2 = 0$; $db=0$\\
 
-\textcolor{blue}{for $i=1$ to $m$:}\\
-$\indent$ $z^{(i)} = w^T x^{(i)} + b$\\
-$\indent$ $a^{(i)} = \sigma(z^{(i)})$\\
-$\indent$ $\mathcal{J} += -[y^{(i)} log(a^{(i)}) + (1-y^{(i)})log(1-a^{(i)})]$\\
-$\indent$ $dz^{(i)} = a^{(i)}- y^{(i)}$\\
+$\indent$ $\indent$ \textcolor{blue}{for $i=1$ to $m$:}\\
+$\indent$ $\indent$ $z^{(i)} = w^T x^{(i)} + b$\\
+$\indent$ $\indent$ $a^{(i)} = \sigma(z^{(i)})$\\
+$\indent$ $\indent$ $\mathcal{J} += -[y^{(i)} log(a^{(i)}) + (1-y^{(i)})log(1-a^{(i)})]$\\
+$\indent$ $\indent$ $dz^{(i)} = a^{(i)}- y^{(i)}$\\
 
-\textcolor{red}{* The value of $dw_1$, $dw_2$, $\dots$, $dw_{n_x}$, $db$ in the code is cumulative:}\\
-$\indent$ $dw_1 += x_1^{(i)}dz^{(i)}$\\
-$\indent$ $dw_2 += x_2^{(i)}dz^{(i)}$\\
-$\dots$\\
-$\indent$ $dw_{n_x} += x_{n_x}^{(i)}dz^{(i)}$\\
+$\indent$ $\indent$ \textcolor{red}{* The value of $dw_1$, $dw_2$, $\dots$, $dw_{n_x}$, $db$ in the code is cumulative:}\\
+$\indent$ $\indent$ $dw_1 += x_1^{(i)}dz^{(i)}$\\
+$\indent$ $\indent$ $dw_2 += x_2^{(i)}dz^{(i)}$\\
+$\indent$ $\indent$ $\dots$\\
+$\indent$ $\indent$ $dw_{n_x} += x_{n_x}^{(i)}dz^{(i)}$\\
 
-$\indent$ $db += dz^{(i)}$\\
+$\indent$ $\indent$ $db += dz^{(i)}$\\
 
 $J/=m$,  $dw_1 /=m$,  $dw_2 /=m$, \dots, $dw_{n_x} /=m$, $db /=m$\\
     }%
