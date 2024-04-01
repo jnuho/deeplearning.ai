@@ -230,11 +230,12 @@ Scale drives deep learning progress.
     
     ($\hat{y}^{(i)} = \sigma(w^T x^{(i)} + b) = \sigma(z^{(i)})$ for $i = 1, 2, \dots ,m_{train}$)\\
 
+
+    $P(y |x) = P(y=1|x) + P(y=0|x) = \hat{y} + (1-\hat{y}) = \hat{y}^y (1-\hat{y})^{(1-y)}$\\
+
     Parameters: $w \in \mathbb{R}^{n_x}$ a $n_x$ dimensional vector, $b \in \mathbb{R}$ a real number.\\
 
-    Output $\hat{y} = \sigma(w^{T}x + b) = \sigma(z)$\\
-
-    $\displaystyle \sigma (z)=\frac {1}{1+e^{-z}}$\\
+    Output $\hat{y} = \sigma(w^{T}x + b) = \sigma(z) = \sigma (z)=\frac {1}{1+e^{-z}}$\\
 
     Drawing a sigmoid function and its derivative in tikz\\
 
@@ -272,19 +273,36 @@ Scale drives deep learning progress.
 
     Given $\{(x^{(1)}, y^{(1)}), (x^{(2)}, y^{(2)}), \hdots, (x^{(m)}, y^{(m)})\}$, want $\hat{y}^{(i)} \approx y^{(i)}$. \\
 
-    Loss(error) function (for a single training Example):
+    Loss(error) function (for a \textbf{single} training Example):
 
-    $\displaystyle \mathcal{L}(\hat{y}, y) = -(y\log{\hat{y}} + (1-y)\log{(1-\hat{y}))}$\\
+    \fbox{$\displaystyle \mathcal{L}(\hat{y}, y)$} $= -(y\log{\hat{y}} + (1-y)\log{(1-\hat{y}))}$\\
 
-    Cost function (for the entire training Examples):
+    Cost function (for the \textbf{entire} training Examples; $i=1,2,\dots, m$):
 
-    $\displaystyle \mathcal{J}(w, b) = \frac{1}{m}\sum_{i=1}^{m} \mathcal{L}(\hat{y}^{(i)}, y^{(i)}) = -\frac{1}{m}\sum_{i=1}^{m} [y^{(i)}\log{\hat{y}^{(i)}} + (1-y^{(i)})\log{(1-\hat{y}^{(i)})}]$\\\\
+    \fbox{$\displaystyle \mathcal{J}(w, b)$} $= \frac{1}{m}\sum_{i=1}^{m} \mathcal{L}(\hat{y}^{(i)}, y^{(i)}) = -\frac{1}{m}\sum_{i=1}^{m} [y^{(i)}\log{\hat{y}^{(i)}} + (1-y^{(i)})\log{(1-\hat{y}^{(i)})}]$\\\\
 
     The loss function computes the error for a single training example; the cost function is the average of the loss functions of the entire training set.\\
 
     In training logistic regression model, we will try to find $w$ and $b$ such that they minimize the Cost function $\mathcal{J}(w, b)$.\\
 
     Logistic Regression can be seen as a very small Neural Network.\\
+
+
+\newpage
+
+\textbf{Explanation of Logistic Regression's Cost Function:}\\
+
+$\log{P(y |x)} = y\log \hat{y} + (1-y) \log (1-\hat{y}) = - \mathcal{L}(\hat{y},y)$ tells that in order to make probabiliy large, we have to minimize the Loss function.\\
+
+$\log P(\text{labels in training set}) = \log \prod_{i=1}^m P(y^{(i)}|x^{(i)})$\\
+
+$= \sum_{i=1}^m P(y^{(i)}|x^{(i)}) = -\sum_{i=1}^m \mathcal{L}(\hat{y}^{(i)}, y^{(i)})$\\
+
+(Maximum Likelihood Estimation: choose parameters to maximize it.)\\
+
+Cost: $\mathcal{J}(w,b)= \frac{1}{m} \sum_{i=1}^m \mathcal{L}(\hat{y}^{(i)}, y^{(i)})$\\
+
+Minimize Cost in order to carry out the Maximum Likelihood Estimation with the logistic regression model under the assumption that our training examples were iid (identically independently distributed).\\
 
 
 \newpage
@@ -471,7 +489,9 @@ $\fbox{$da^{(i)}$}= \frac{d\mathcal{L}(a^{(i)},y^{(i)})}{da} = -\frac{d}{da} (y^
 
 $\fbox{$dz^{(i)}$} = \frac{d\mathcal{L}(a^{(i)},y^{(i)})}{dz} = \frac{d\mathcal{L}(a^{(i)},y^{(i)})}{da} \frac{da}{dz} = (-\frac{y^{(i)}}{a^{(i)}}+\frac{1-y^{(i)}}{1-a^{(i)}})\frac{da}{dz}= a^{(i)}-y^{(i)}$
 
-, where $\frac{da}{dz} = \frac{d}{dz}(\frac{1}{1+e^{-z^{(i)}}}) = \frac{e^{-z^{(i)}}}{(1+e^{-z^{(i)}})^2} = \frac{1}{1+e^{-z^{(i)}}}(1-\frac{1}{1+e^{-z^{(i)}}})= a^{(i)}(1-a^{(i)})$\\
+, where $\frac{da}{dz} = \frac{d}{dz}(\frac{1}{1+e^{-z^{(i)}}}) = \frac{e^{-z^{(i)}}}{(1+e^{-z^{(i)}})^2} = \frac{1}{1+e^{-z^{(i)}}}(1-\frac{1}{1+e^{-z^{(i)}}})= a^{(i)}(1-a^{(i)})$\\\\
+
+\textbf{\textcolor{blue}{We first do Forward Propagation with initial (randomly initialized) $w$, $b$. Given incorrect prediction of $y$, do Backward Propagation using gradient descent and update the paramers $w$, $b$.}}\\
 
 \newpage
 
