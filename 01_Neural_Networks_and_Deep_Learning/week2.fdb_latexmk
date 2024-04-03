@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1711770331.1174 "c:/Users/user/deeplearning.ai/01_Neural_Networks_and_Deep_Learning/week2.tex" "week2.pdf" "week2" 1711770334.34502 0
+["pdflatex"] 1712032830.79584 "c:/Users/user/deeplearning.ai/01_Neural_Networks_and_Deep_Learning/week2.tex" "week2.pdf" "week2" 1712032833.42228 0
   "C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1711607984 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/user/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1711095230 14064 eeeb5e99d5cbc10d944212def22e282a ""
   "C:/Users/user/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1710087043 24232631 73d91d8f50ec12db5afdc1c8c3030bb8 ""
@@ -192,9 +192,9 @@
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/subfigure/subfigure.sty" 1114253770 14815 1d3da78e0f66f3c62133fbabffd13cf5 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "c:/Users/user/deeplearning.ai/01_Neural_Networks_and_Deep_Learning/week2.tex" 1711770330 28779 637d4a815ee2b7c09616263948acbfb6 ""
-  "week2.aux" 1711770334 3113 3568c829b13d156d554f90fd91d6dcc3 "pdflatex"
-  "week2.tex" 1711770330 28779 637d4a815ee2b7c09616263948acbfb6 ""
+  "c:/Users/user/deeplearning.ai/01_Neural_Networks_and_Deep_Learning/week2.tex" 1712032830 28776 11537baa8727fa07f1a424948fa0de0d ""
+  "week2.aux" 1712032833 3113 3568c829b13d156d554f90fd91d6dcc3 "pdflatex"
+  "week2.tex" 1712032830 28776 11537baa8727fa07f1a424948fa0de0d ""
   (generated)
   "week2.aux"
   "week2.log"
