@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1712192391.28819 "c:/Users/user/deeplearning.ai/01_Neural_Networks_and_Deep_Learning/week3.tex" "week3.pdf" "week3" 1712192392.72481 0
+["pdflatex"] 1712192677.62177 "c:/Users/user/deeplearning.ai/01_Neural_Networks_and_Deep_Learning/week4.tex" "week4.pdf" "week4" 1712192678.64093 0
   "C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1712036978 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/user/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1710087043 24232631 73d91d8f50ec12db5afdc1c8c3030bb8 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -18,16 +18,9 @@
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy10.tfm" 1136765053 1124 6c73e740cf17375f03eec0ee63599741 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy9.tfm" 1136765053 1116 25a7bf822c58caf309a702ef79f4afbb ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
-  "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
-  "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1247596667 36281 c355509802a035cadc5f15869451dcee ""
-  "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb" 1247596667 36094 798f80770b3b148ceedd006d487db67c ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
-  "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb" 1247596666 33993 9b89b85fd2d9df0482bd47194d1d3bf3 ""
-  "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
-  "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
-  "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb" 1247596666 32442 c975af247b6702f7ca0c299af3616b80 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty" 1643997108 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifvtex.sty" 1643997108 1057 525c2192b5febbd8c1f662c9468335bb ""
@@ -176,11 +169,11 @@
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/subfigure/subfigure.sty" 1114253770 14815 1d3da78e0f66f3c62133fbabffd13cf5 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "c:/Users/user/deeplearning.ai/01_Neural_Networks_and_Deep_Learning/week3.tex" 1712192390 25015 44d4322ca45eb9de15ca34fe05a1150e ""
-  "week3.aux" 1712192392 1490 d646c093fa9472f7b7c4bb3e00475264 "pdflatex"
-  "week3.tex" 1712192390 25015 44d4322ca45eb9de15ca34fe05a1150e ""
+  "c:/Users/user/deeplearning.ai/01_Neural_Networks_and_Deep_Learning/week4.tex" 1712192677 2091 b3497f6aa7a041426527256cd11d4407 ""
+  "week4.aux" 1712192678 245 c8e4d636366e8b7322075ca63b74ef36 "pdflatex"
+  "week4.tex" 1712192677 2091 b3497f6aa7a041426527256cd11d4407 ""
   (generated)
-  "week3.aux"
-  "week3.log"
-  "week3.pdf"
+  "week4.aux"
+  "week4.log"
+  "week4.pdf"
   (rewritten before read)

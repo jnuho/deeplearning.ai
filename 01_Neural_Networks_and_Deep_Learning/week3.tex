@@ -680,20 +680,22 @@ Forward Propagation in Logistic Regression:\\
 
 Backward Propagation in Logistic Regression:\\
 
-$da = \frac{d}{da}\mathcal{L}(a,y) = \frac{d}{da}[-y\log{a} -(1-y)\log(1-a)]=-\frac{y}{a} +\frac{1-y}{1-a}$\\
+$da = \frac{d}{da}\mathcal{L}(a,y) = \frac{d}{da}[-y\log{a} -(1-y)\log(1-a)]=-\frac{y}{a} +\frac{1-y}{1-a} = \frac{a-y}{a(1-a)}$\\
 
 $dz = \frac{d}{dz}\mathcal{L}(a,y) = \frac{d}{da}\mathcal{L}(a,y) \frac{dz}{da}= da \cdot \frac{dz}{da} = da \cdot g^{'}(z)$\\
 
-,$\hspace{2mm} _{\text{where} \hspace{1mm} a=g(z) \hspace{1mm}\text{and therefore\hspace{1mm}} \frac{dz}{da} = g^{'}(z)}$\\
+,$\hspace{2mm} _{\text{where} \hspace{1mm} a=g(z) \hspace{1mm}\text{and therefore\hspace{1mm}} \frac{dz}{da} = g^{'}(z) \hspace{1mm} \text{In case of logistic regression: } g(z) = \sigma(z), \text{therefore } g^{'}(z) = g(z)(1-g(z))}$\\
 
-$dw = dz\cdot x$\\
+$dw = \frac{d}{dz}\mathcal{L}(a,y) \frac{dz}{dw} = dz\cdot x$\\
 
-$db = dz$\\
+$db = \frac{d}{dz}\mathcal{L}(a,y) \frac{dz}{db} = dz$\\
 
 
 \newpage
 
 Neural network gradients:\\
+
+Compute forward:\\
 
 \begin{tikzpicture}
     % Input Layer
@@ -706,9 +708,11 @@ Neural network gradients:\\
     % Hidden Layer
     \foreach \i in {1} {
         \node (Hidden1-\i) at (3.5,-2) {$\fbox{$z^{[1]}=W^{[1]} x + b^{[1]}$}$};
+        \node[below of=Hidden1-\i] {$\textcolor{red}{dz^{[1]}}$};
     }
     \foreach \i in {1} {
         \node (Hidden2-\i) at (8,-2) {$\fbox{$a^{[1]}=\sigma(z^{[1]})$}$};
+        \node[below of=Hidden2-\i] {$\textcolor{red}{da^{[1]}}$};
     }
     \foreach \i in {1} {
         \node (Hidden3-\i) at (10.9,-2) {$\dots$};
@@ -745,9 +749,11 @@ Neural network gradients:\\
     }
     \foreach \i in {1} {
         \node (Hidden3-\i) at (3.7,-2) {$\fbox{$z^{[2]}=W^{[2]} a^{[1]} + b^{[2]}$}$};
+        \node[below of=Hidden3-\i] {$\textcolor{red}{dz^{[2]}, dw^{[2]}, db^{[2]}}$};
     }
     \foreach \i in {1} {
         \node (Hidden4-\i) at (8.1,-2) {$\fbox{$a^{[2]}=\sigma(z^{[2]})$}$};
+        \node[below of=Hidden4-\i] {$\textcolor{red}{da^{[2]}}$};
     }
     % Output Layer
     \foreach \i in {1} {
@@ -770,9 +776,33 @@ Neural network gradients:\\
     }
 \end{tikzpicture}
 
+
+Compute backward ($n_x = n^{[0]}, n^{[1]}, n^{[2]}= 1$)\\
+
+$da^{[2]} \rightarrow dz^{[2]} \rightarrow dw^{[2]}, db^{[2]} \rightarrow
+da^{[1]} \rightarrow dz^{[1]} \rightarrow dw^{[1]}, db^{[1]}$\\
+
+$\fbox{$dz^{[2]}$} = a^{[2]}-y \hspace{5mm}  _{\text{(logistic regression: activation for output layer is sigmoid)} \hspace{2mm} a^{[2]} = \sigma(z^{[2]})}$ \\
+
+$\fbox{$dw^{[2]}$} = dz^{[2]} {a^{[1]}}^T \hspace{5mm} _{\text{(similar to logistic regression problem)}} \hspace{2mm} _{dw=dz\cdot x}$\\
+
+$\fbox{$db^{[2]}$} = dz^{[2]}$\\
+
+\noindent\rule{8cm}{0.4pt}
+
+
+$\fbox{$dz^{[1]}$} = {w^{[2]}}^T dz^{[2]} * {g^{[1]}}^{'}(z^{[1]})$ where $_{(n^{[1]},1)} = _{(n^{[1]},n^{[2]})}  \cdot _{(n^{[2]}, 1)} * _{(n^{[1]}, 1)}$\\
+
+$\fbox{$dw^{[1]}$} = dz^{[1]} {X}^T = dz^{[1]} {a^{[0]}}^T$\\
+
+$\fbox{$db^{[1]}$} = dz^{[1]}$\\
+
+
 \newpage
 
 Summary of gradient descent\\
+
+For a simple training example: (from the previouse slide)\\
 
 $dz^{[2]} = a^{[2]} - y$\\
 
@@ -788,22 +818,99 @@ $db^{[1]} = dz^{[1]}$\\
 
 \noindent\rule{8cm}{0.4pt}
 
+For $m$ training examples: \\
+
 $dZ^{[2]} = A^{[2]} - Y$\\
 
 $dW^{[2]} = \frac{1}{m}dZ^{[2]}{A^{[1]}}^T$\\
 
 $db^{[2]} = \frac{1}{m}np.sum(dZ^{[2]}, axis=1, keepdims=True)$\\
 
-$dZ^{[1]} = {W^{[2]}}^T dZ^{[2]} * {{g^{[1]}}}^{'}(Z^{[1]})$\\
+$dZ^{[1]} = {W^{[2]}}^T dZ^{[2]} * {{g^{[1]}}}^{'}(Z^{[1]})$, elementwise in $_{(n^{[1]},m)}$ dimension.\\
 
 $dW^{[1]} = \frac{1}{m} dZ^{[1]} X^T$\\
 
 $db^{[1]} = \frac{1}{m}np.sum(dZ^{[1]}, axis=1, keepdims=True)$\\
 
 
-
 \newpage
 \subsection{Random Initialization}
+
+What happens if you initialize weights to zero?\\
+
+\begin{tikzpicture}
+    % Input Layer
+    \foreach \name/\i in {$x_1$/1,$x_2$/2} {
+        \node (Input-\i) at (0,-\i*2) {\name};
+        \ifnum \i=2
+        \node[below of=Input-\i] {$_{n^{[0]}=2}$};
+        \fi
+    }
+    % Hidden Layer
+    \foreach \i in {1,2} {
+        \node[circle, minimum size = 5mm, draw=black!50, line width=.3mm]
+        (Hidden1-\i) at (3,-\i*2) {$_{{a_{\i}}^{[1]}}$};
+        \ifnum \i=2
+        \node[below of=Hidden1-\i] {$_{n^{[0]}=2}$};
+        \fi
+    }
+    \foreach \i in {1} {
+        \node[circle, minimum size = 5mm, draw=black!50, line width=.3mm]
+        (Hidden2-\i) at (6,-3) {$_{{a_{\i}}^{[2]}}$};
+        \ifnum \i=2
+        \node[below of=Hidden2-\i] {$_{n^{[2]}=1}$};
+        \fi
+    }
+    \foreach \i in {1} {
+        \node (Output-\i) at (9,-3) {$\hat{y}$};
+    }
+    % Arrows
+    \foreach \i in {1,2} {
+        \foreach \j in {1,2} {
+           \draw[->] (Input-\i) -- (Hidden1-\j);
+        }
+    }
+    \foreach \i in {1,2} {
+        \foreach \j in {1} {
+           \draw[->] (Hidden1-\i) -- (Hidden2-\j);
+        }
+    }
+    \foreach \i in {1} {
+        \foreach \j in {1} {
+           \draw[->] (Hidden2-\i) -- (Output-\j);
+        }
+    }
+\end{tikzpicture}
+
+
+$w^{[1]} = \begin{bmatrix}
+   0 & 0 \\ 
+   0 & 0 \\ 
+\end{bmatrix}$, 
+$b^{[1]} = \begin{bmatrix}
+   0 \\ 
+   0 \\ 
+\end{bmatrix}$ gives $w^{[2]} = \begin{bmatrix}
+   0 & 0\\ 
+\end{bmatrix}$ and hidden units in $^{[1]}$ are identical. So having more than one hidden units become meaningless.\\
+
+${a_1}^{[1]} = {a_2}^{[1]} $\\
+
+${dz_1}^{[1]} = {dz_2}^{[1]} $\\
+
+
+Random Initialization\\
+
+$w^{[1]} = np.random.randn((2,2)) * \textcolor{blue}{.01}$\\
+
+$b^{[1]} = np.zeros((2,1)) $\\
+
+$w^{[2]} = np.random.randn((1,2)) * \textcolor{blue}{.01}$\\
+
+$b^{[2]} = 0$\\
+
+$_{\textcolor{blue}{\text{(big multiplier will make slope of the gradient descent is very small, so choose it as a small value.)}}}$\\
+
 
 \end{document}
 
