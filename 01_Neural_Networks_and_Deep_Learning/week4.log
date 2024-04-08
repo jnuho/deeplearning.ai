@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.11)  4 APR 2024 10:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.11)  8 APR 2024 15:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -366,50 +366,48 @@ Package pgfplots: loading complementary utilities for your pgf version...
 File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.sty
-Package: subfigure 2002/07/30 v2.1.4 subfigure package
-\subfigtopskip=\skip56
-\subfigcapskip=\skip57
-\subfigcaptopadj=\dimen272
-\subfigbottomskip=\skip58
-\subfigcapmargin=\dimen273
-\subfiglabelskip=\skip59
-\c@subfigure=\count302
-\c@lofdepth=\count303
-\c@subtable=\count304
-\c@lotdepth=\count305
-
-****************************************
-* Local config file subfigure.cfg used *
-****************************************
-(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.cfg)
-\subfig@top=\skip60
-\subfig@bottom=\skip61
-) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count306
+))) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count302
 \lst@gtempboxa=\box65
 \lst@token=\toks50
-\lst@length=\count307
-\lst@currlwidth=\dimen274
-\lst@column=\count308
-\lst@pos=\count309
-\lst@lostspace=\dimen275
-\lst@width=\dimen276
-\lst@newlines=\count310
-\lst@lineno=\count311
-\lst@maxwidth=\dimen277
+\lst@length=\count303
+\lst@currlwidth=\dimen272
+\lst@column=\count304
+\lst@pos=\count305
+\lst@lostspace=\dimen273
+\lst@width=\dimen274
+\lst@newlines=\count306
+\lst@lineno=\count307
+\lst@maxwidth=\dimen275
  (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
 ) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
-\c@lstnumber=\count312
-\lst@skipnumbers=\count313
+\c@lstnumber=\count308
+\lst@skipnumbers=\count309
 \lst@framebox=\box66
 ) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2024/02/21 1.10 listings configuration
 ))
 Package: listings 2024/02/21 1.10 (Carsten Heinz)
- (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/fontsize\fontsize.sty
+ (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen276
+\captionmargin=\dimen277
+\caption@leftmargin=\dimen278
+\caption@rightmargin=\dimen279
+\caption@width=\dimen280
+\caption@indent=\dimen281
+\caption@parindent=\dimen282
+\caption@hangindent=\dimen283
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count310
+\c@continuedfloat=\count311
+Package caption Info: listings package is loaded.
+) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/fontsize\fontsize.sty
 Package: fontsize 2021/08/04 v0.8.5 'fontsize' package. Set main font sizes (Ivan Valbusa)
  (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
@@ -417,13 +415,13 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 \XKV@toks=\toks51
 \XKV@tempa@toks=\toks52
 )
-\XKV@depth=\count314
+\XKV@depth=\count312
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xfp\xfp.sty (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
 Package: expl3 2024-02-20 L3 programming layer (loader) 
  (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count315
+\l__color_backend_stack_int=\count313
 \l__pdf_internal_box=\box67
 ))
 Package: xfp 2024-02-18 L3 Floating point unit
@@ -439,17 +437,17 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count316
-\Gm@cntv=\count317
-\c@Gm@tempcnt=\count318
-\Gm@bindingoffset=\dimen278
-\Gm@wd@mp=\dimen279
-\Gm@odd@mp=\dimen280
-\Gm@even@mp=\dimen281
-\Gm@layoutwidth=\dimen282
-\Gm@layoutheight=\dimen283
-\Gm@layouthoffset=\dimen284
-\Gm@layoutvoffset=\dimen285
+\Gm@cnth=\count314
+\Gm@cntv=\count315
+\c@Gm@tempcnt=\count316
+\Gm@bindingoffset=\dimen284
+\Gm@wd@mp=\dimen285
+\Gm@odd@mp=\dimen286
+\Gm@even@mp=\dimen287
+\Gm@layoutwidth=\dimen288
+\Gm@layoutheight=\dimen289
+\Gm@layouthoffset=\dimen290
+\Gm@layoutvoffset=\dimen291
 \Gm@dimlist=\toks53
  (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
@@ -472,16 +470,16 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
 LaTeX Font Info:    ... okay on input line 47.
  (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count319
-\scratchdimen=\dimen286
+\scratchcounter=\count317
+\scratchdimen=\dimen292
 \scratchbox=\box68
-\nofMPsegments=\count320
-\nofMParguments=\count321
+\nofMPsegments=\count318
+\nofMParguments=\count319
 \everyMPshowfont=\toks54
-\MPscratchCnt=\count322
-\MPscratchDim=\dimen287
-\MPnumerator=\count323
-\makeMPintoPDFobject=\count324
+\MPscratchCnt=\count320
+\MPscratchDim=\dimen293
+\MPnumerator=\count321
+\makeMPintoPDFobject=\count322
 \everyMPtoPDFconversion=\toks55
 ) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -493,7 +491,9 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
  on input line 47.
 
-\c@lstlisting=\count325
+\c@lstlisting=\count323
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -545,37 +545,307 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <16.19995> not available
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <16.19995> not available
 (Font)              size <17.28> substituted on input line 54.
 
-LaTeX Font Info:    Calculating math sizes for size <13.5> on input line 71.
+LaTeX Font Info:    Calculating math sizes for size <13.5> on input line 76.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <9.44995> not available
-(Font)              size <9> substituted on input line 71.
+(Font)              size <9> substituted on input line 76.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13.5> not available
-(Font)              size <14.4> substituted on input line 71.
+(Font)              size <14.4> substituted on input line 76.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <9.44995> not available
-(Font)              size <9> substituted on input line 71.
+(Font)              size <9> substituted on input line 76.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13.5> not available
-(Font)              size <14.4> substituted on input line 71.
+(Font)              size <14.4> substituted on input line 76.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <9.44995> not available
-(Font)              size <9> substituted on input line 71.
+(Font)              size <9> substituted on input line 76.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 71.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 76.
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 71.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 76.
  (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Overfull \hbox (18.40498pt too wide) in paragraph at lines 303--304
+ [][] 
+ []
 
-{C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (week4.aux)
+[1
+
+{C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 383--384
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--390
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--396
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 402--403
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--413
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--415
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--419
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--421
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--433
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 438--439
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--444
+
+ []
+
+[4]
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <13.5> not available
+(Font)              size <14.4> substituted on input line 447.
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 459--460
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--487
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--489
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--495
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--497
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 504--505
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--507
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 510--511
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 512--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 514--515
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 518--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 523--524
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 525--526
+
+ []
+
+[8] [9] (week4.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -587,17 +857,17 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 25645 strings out of 474436
- 646681 string characters out of 5742426
- 1930190 words of memory out of 5000000
- 47578 multiletter control sequences out of 15000+600000
- 563017 words of font info for 55 fonts, out of 8000000 for 9000
+ 27038 strings out of 474436
+ 674451 string characters out of 5742426
+ 1958190 words of memory out of 5000000
+ 48971 multiletter control sequences out of 15000+600000
+ 563324 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,6n,107p,790b,666s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on week4.pdf (1 page, 44721 bytes).
+ 102i,10n,107p,789b,849s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+Output written on week4.pdf (9 pages, 145831 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
+ 85 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
