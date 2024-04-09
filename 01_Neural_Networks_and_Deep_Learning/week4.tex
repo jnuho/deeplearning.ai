@@ -399,7 +399,78 @@ $_{n^{[0]} = n_x = 3, \hspace{2mm} n^{[1]} = 5, \hspace{2mm} n^{[2]} = 5, \hspac
 \newpage
 \subsection{Forward Propagation in a deep network}
 
-$Z^{[1]} = W^{[1]} A^{[0]} + b^{[1]}, _{where A^{[0]} = X}$\\
+\begin{tikzpicture}
+% Input Layer
+\foreach \name/\i in {x1/1,x2/2,x3/3} {
+    \node (Input-\i) at (0,-\i*1.5) {\name};
+    \ifnum \i=1
+        \node[above of=Input-\i] {};
+    \fi
+}
+% Hidden Layer
+\foreach \i in {1,2,3,4,5} {
+    \node[circle, minimum size = 7mm, draw=teal!50, line width=.4mm]
+    (Hidden1-\i) at (2,-\i) {};
+    \ifnum \i=1
+    \node[above of=Hidden1-\i] {$^{[1]}$};
+    \fi
+}
+\foreach \i in {1,2,3,4,5} {
+    \node[circle, minimum size = 7mm, draw=teal!50, line width=.4mm]
+    (Hidden2-\i) at (4,-\i) {};
+    \ifnum \i=1
+    \node[above of=Hidden2-\i] {$^{[2]}$};
+    \fi
+}
+\foreach \i in {1,2,3} {
+    \node[circle, minimum size = 7mm, draw=teal!50, line width=.4mm]
+    (Hidden3-\i) at (6,-\i*1.5) {};
+    \ifnum \i=1
+    \node[above of=Hidden3-\i] {$^{[3]}$};
+    \fi
+}
+\foreach \i in {1} {
+    \node[circle, minimum size = 7mm, draw=teal!50, line width=.4mm]
+    (Hidden4-\i) at (8,-3) {};
+    \ifnum \i=1
+    \node[above of=Hidden4-\i] {$^{[4]}$};
+    \fi
+}
+% Output Layer
+\foreach \name/\i in {$\hat{y}$/1} {
+    \node (Output-\i) at (10,-3) {\name};
+    \ifnum \i=1
+    \node[above of=Output-\i] {};
+    \fi
+}
+% Arrows
+\foreach \i in {1,2,3} {
+    \foreach \j in {1,2,3,4,5} {
+    \draw[->] (Input-\i) -- (Hidden1-\j);
+    }
+}
+\foreach \i in {1,2,3,4,5} {
+    \foreach \j in {1,2,3,4,5} {
+    \draw[->] (Hidden1-\i) -- (Hidden2-\j);
+    }
+}
+\foreach \i in {1,2,3,4,5} {
+    \foreach \j in {1,2,3} {
+    \draw[->] (Hidden2-\i) -- (Hidden3-\j);
+    }
+}
+\foreach \i in {1,2,3} {
+    \foreach \j in {1} {
+    \draw[->] (Hidden3-\i) -- (Hidden4-\j);
+    }
+}
+\foreach \i in {1} {
+    \foreach \j in {1} { \draw[->] (Hidden4-\i) -- (Output-\j);
+    }
+}
+\end{tikzpicture}\\
+
+$Z^{[1]} = W^{[1]} A^{[0]} + b^{[1]} _{\hspace{5mm} where \hspace{1mm} A^{[0]} = X}$\\
 
 $A^{[1]} = g^{[{1}]} (Z^{[1]})$\\
 
