@@ -560,17 +560,18 @@ Backward propagation for layer $l$: $da^{[l]} \rightarrow da^{[l-1]},dW^{[l]}, d
 
 $dZ^{[l]} = dA^{[l]} * {g^{[l]}}^{'}(Z^{[l]})$\\
 
-$dW^{[l]} = \frac{1}{m}dz^{[l]}{A^{[l-1]}}^T$\\
+$dW^{[l]} = \frac{1}{m}dZ^{[l]}{A^{[l-1]}}^T$\\
 
 $db^{[l]} = \frac{1}{m}np.sum(dZ^{[l]}, axis=1, keepdims=True)$\\
 
-$dA^{[l-1]} = {W^{[l]}}^T dZ^{[l]}$\\
+$dA^{[l-1]} = {W^{[l]}}^T dZ^{[l]} = \frac{dJ}{dA^{[l-1]}} = \frac{dZ^{[l]}}{dA^{[l-1]}} \frac{dJ}{dZ^{[l]}} = \frac{dZ^{[l]}}{dA^{[l-1]}} dZ^{[l]}$\\
 
-(with initial value $dA^{[L]} = A^{[L]}-Y$)\\
+(with initial value $dZ^{[L]} = A^{[L]}-Y$)\\
+
+
 
 \newpage
 \subsection{Parameter vs. Hyperparameter}
-
 
 $\indent$ Paramters: $W^{[l]}, b^{[l]}$\\
 
