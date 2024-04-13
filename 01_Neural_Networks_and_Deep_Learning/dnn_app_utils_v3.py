@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import h5py
+import os
 
 
 def sigmoid(Z):
@@ -85,11 +86,16 @@ def sigmoid_backward(dA, cache):
 
 
 def load_data():
-    train_dataset = h5py.File('datasets/train_catvnoncat.h5', "r")
+    base_path = os.path.dirname(os.path.abspath(__file__))
+    train_dataset_path = os.path.join(base_path, 'datasets/train_catvnoncat.h5')
+    train_dataset = h5py.File(train_dataset_path, "r")
+    # train_dataset = h5py.File('datasets/train_catvnoncat.h5', "r")
     train_set_x_orig = np.array(train_dataset["train_set_x"][:]) # your train set features
     train_set_y_orig = np.array(train_dataset["train_set_y"][:]) # your train set labels
 
-    test_dataset = h5py.File('datasets/test_catvnoncat.h5', "r")
+    test_dataset_path = os.path.join(base_path, 'datasets/test_catvnoncat.h5')
+    test_dataset = h5py.File(test_dataset_path, "r")
+    # test_dataset = h5py.File('datasets/test_catvnoncat.h5', "r")
     test_set_x_orig = np.array(test_dataset["test_set_x"][:]) # your test set features
     test_set_y_orig = np.array(test_dataset["test_set_y"][:]) # your test set labels
 

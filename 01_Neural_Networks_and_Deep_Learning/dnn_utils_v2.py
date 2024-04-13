@@ -37,6 +37,7 @@ def relu(Z):
     return A, cache
 
 
+# NOTE: dZ = dA * g'(Z) where g(Z) = ReLU(Z)
 def relu_backward(dA, cache):
     """
     Implement the backward propagation for a single RELU unit.
@@ -59,6 +60,8 @@ def relu_backward(dA, cache):
     
     return dZ
 
+# NOTE: dZ = dA * g'(Z) where g(Z) = sigmoid(Z)
+# g'(Z) = g(Z)(1- g(Z))
 def sigmoid_backward(dA, cache):
     """
     Implement the backward propagation for a single SIGMOID unit.
