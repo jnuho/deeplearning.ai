@@ -169,17 +169,12 @@ The following is the 2-Layer Neural Network:\\
         \node[above of=Hidden1-\i] {$a^{[1]}$};
         \fi
     }
+    % Output Layer
     \foreach \i in {1} {
         \node[circle, minimum size = 6mm, draw=purple!50, line width=.4mm] (Hidden2-\i) at (6,-2) {$a_{\i}^{[2]}$};
         \ifnum \i=1
         \node[above of=Hidden2-\i] {$a^{[2]}$};
-        \fi
-    }
-    % Output Layer
-    \foreach \name/\i in {$\hat{y}$/1} {
-        \node (Output-\i) at (9,-2) {\name};
-        \ifnum \i=1
-        \node[above of=Output-\i] {Output};
+        \node[below of=Hidden2-\i] {Output $= \hat{y}$};
         \fi
     }
     % Arrows
@@ -191,11 +186,6 @@ The following is the 2-Layer Neural Network:\\
     \foreach \i in {1,2,3,4} {
         \foreach \j in {1} {
            \draw[->] (Hidden1-\i) -- (Hidden2-\j);
-        }
-    }
-    \foreach \i in {1} {
-        \foreach \j in {1} {
-            \draw[->] (Hidden2-\i) -- (Output-\j);
         }
     }
 \end{tikzpicture}
@@ -273,17 +263,12 @@ $\noindent\fbox{
         \node[above of=Hidden1-\i] {$a^{[1]}$};
         \fi
     }
+    % Output Layer
     \foreach \i in {1} {
         \node[circle, minimum size = 6mm, draw=purple!50, line width=.4mm] (Hidden2-\i) at (6,-2) {$a_{\i}^{[2]}$};
         \ifnum \i=1
         \node[above of=Hidden2-\i] {$a^{[2]}$};
-        \fi
-    }
-    % Output Layer
-    \foreach \name/\i in {$\hat{y}$/1} {
-        \node (Output-\i) at (9,-2) {\name};
-        \ifnum \i=1
-        \node[above of=Output-\i] {Output};
+        \node[below of=Output-\i] {Output $= \hat{y}$};
         \fi
     }
     % Arrows
@@ -295,11 +280,6 @@ $\noindent\fbox{
     \foreach \i in {1,2,3,4} {
         \foreach \j in {1} {
            \draw[->] (Hidden1-\i) -- (Hidden2-\j);
-        }
-    }
-    \foreach \i in {1} {
-        \foreach \j in {1} {
-            \draw[->] (Hidden2-\i) -- (Output-\j);
         }
     }
 \end{tikzpicture}
@@ -371,17 +351,12 @@ $\\
         \node[above of=Hidden1-\i] {$a^{[1]}$};
         \fi
     }
+    % Output Layer
     \foreach \i in {1} {
         \node[circle, minimum size = 6mm, draw=purple!50, line width=.4mm] (Hidden2-\i) at (6,-2) {$a_{\i}^{[2]}$};
         \ifnum \i=1
         \node[above of=Hidden2-\i] {$a^{[2]}$};
-        \fi
-    }
-    % Output Layer
-    \foreach \name/\i in {$\hat{y}$/1} {
-        \node (Output-\i) at (9,-2) {\name};
-        \ifnum \i=1
-        \node[above of=Output-\i] {Output};
+        \node[below of=Output-\i] {Output $=\hat{y}$};
         \fi
     }
     % Arrows
@@ -393,11 +368,6 @@ $\\
     \foreach \i in {1,2,3,4} {
         \foreach \j in {1} {
            \draw[->] (Hidden1-\i) -- (Hidden2-\j);
-        }
-    }
-    \foreach \i in {1} {
-        \foreach \j in {1} {
-            \draw[->] (Hidden2-\i) -- (Output-\j);
         }
     }
 \end{tikzpicture}
@@ -856,13 +826,11 @@ What happens if you initialize weights to zero?\\
     }
     \foreach \i in {1} {
         \node[circle, minimum size = 5mm, draw=black!50, line width=.3mm]
-        (Hidden2-\i) at (6,-3) {$_{{a_{\i}}^{[2]}}$};
-        \ifnum \i=2
-        \node[below of=Hidden2-\i] {$_{n^{[2]}=1}$};
+        (Output) at (6,-3) {$_{{a_{\i}}^{[2]}}$};
+        \ifnum \i=1
+        \node[below of=Output] {$_{n^{[2]}=1}$};
+        \node[above of=Output] {Output $=\hat{y}$};
         \fi
-    }
-    \foreach \i in {1} {
-        \node (Output-\i) at (9,-3) {$\hat{y}$};
     }
     % Arrows
     \foreach \i in {1,2} {
@@ -872,12 +840,7 @@ What happens if you initialize weights to zero?\\
     }
     \foreach \i in {1,2} {
         \foreach \j in {1} {
-           \draw[->] (Hidden1-\i) -- (Hidden2-\j);
-        }
-    }
-    \foreach \i in {1} {
-        \foreach \j in {1} {
-           \draw[->] (Hidden2-\i) -- (Output-\j);
+           \draw[->] (Hidden1-\i) -- (Output);
         }
     }
 \end{tikzpicture}
