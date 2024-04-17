@@ -285,22 +285,6 @@ def L_layer_model(X, Y, layers_dims, learning_rate = 0.0075, num_iterations = 30
     return parameters
 
 
-train_x_orig, train_y, test_x_orig, test_y, classes = load_data()
-
-train_x = train_x_orig.reshape(train_x_orig.shape[0], -1).T
-train_x = train_x / 255
-test_x = test_x_orig.reshape(test_x_orig.shape[0], -1).T
-test_x = test_x / 255
-
-# L = 4 excluding the input feature X in layer [0]
-# [12288, 20, 7, 5, 1]
-# np.random.seed(1)
-layers_dims = [train_x.shape[0], 20, 7, 5, 1]
-
-parameters = L_layer_model(train_x, train_y, layers_dims, num_iterations=2500, print_cost=True)
-
-
-# %%
 def predict(X, y, parameters):
     """
     This function is used to predict the results of a  L-layer neural network.
@@ -335,12 +319,8 @@ def predict(X, y, parameters):
         
     return p
 
-def test_cat():
-    num_px = 64
-    my_label_y = 1
 
-    # Directory containing your images
-    image_dir = "images/CAT_00/"
+def convert_to_matrix(x, y, image_dir, num_px, my_label_y, offset):
     # Get a list of all files in the directory
     image_files = os.listdir(image_dir)
 
@@ -348,7 +328,7 @@ def test_cat():
     image_files = [f for f in image_files if f.endswith('.jpg')]
 
     # Iterate over the image files
-    for image_file in image_files:
+    for i, image_file in enumerate(image_files):
         # Full path to the image file
         fname = os.path.join(image_dir, image_file)
         
@@ -357,21 +337,54 @@ def test_cat():
         my_image = resize(image, (num_px, num_px)).reshape((num_px*num_px*3,1))
         my_image = my_image/255.
 
-        # Use your model to predict
-        my_predicted_image = predict(my_image, my_label_y, parameters)
+        x[:, i+offset] = my_image.flatten()
+        y[:, i+offset] = my_label_y
 
-        # Print the prediction
-        plt.imshow(image)
-        print ("y = " + str(np.squeeze(my_predicted_image)) + ", your L-layer model predicts a \"" + classes[int(np.squeeze(my_predicted_image)),].decode("utf-8") +  "\" picture.")
+    return x, y
+
+
+def load_test_x_and_y():
+    """
+    return
+    'test_x' (12288, 100) where 35 is non-cat
+    'test_y' (1, 100)
+    """
+    num_px = 64
+
+    test_x = np.zeros((num_px * num_px * 3, 100))
+    test_y = np.zeros((1, 100))
+
+    test_x, test_y = convert_to_matrix(test_x, test_y, "images/cat_test/", num_px, my_label_y=1, offset=0)
+    test_x, test_y = convert_to_matrix(test_x, test_y, "images/noncat_test", num_px, my_label_y=0, offset=65)
+
+    return test_x, test_y
+
+def load_train_x_and_y():
+    """
+    return
+    'train_x' (12288, 400) where 100 is non-cat
+    'train_y' (1, 400)
+    """
+    num_px = 64
+
+    train_x = np.zeros((num_px * num_px * 3, 400))
+    train_y = np.zeros((1, 400))
+
+    train_x, train_y = convert_to_matrix(train_x, train_y, "images/cat_train/", num_px, my_label_y=1, offset=0)
+    train_x, train_y = convert_to_matrix(train_x, train_y, "images/noncat_train", num_px, my_label_y=0, offset=300)
+
+    return train_x, train_y
 
 def test_image(my_image, my_label_y):
+    _, _, _, _, classes = load_data()
+
     #DeprecationWarning: Starting with ImageIO v3 the behavior of this function will switch to that of iio.v3.imread. To keep the current behavior (and make this warning disappear) use `import imageio.v2 as imageio` or call `imageio.v2.imread` directly.
     num_px = 64
     ## START CODE HERE ##
     # base_path = os.path.dirname(os.path.abspath(__file__))
     # my_image = os.path.join(base_path, 'cats/cat_body')
-    # my_image = "cats/cat_body.jpg" # change this to the name of your image file 
-    # my_image = "my_image.jpg" # change this to the name of your image file 
+    # my_image = "cats/cat_body.jpg" # change this to the name of your image file
+    # my_image = "my_image.jpg" # change this to the name of your image file
     my_label_y = [my_label_y] # the true class of your image (1 -> cat, 0 -> non-cat)
     ## END CODE HERE ##
 
@@ -390,38 +403,59 @@ def test_image(my_image, my_label_y):
     print ("y = " + str(np.squeeze(my_predicted_image)) + ", your L-layer model predicts a \"" + classes[int(np.squeeze(my_predicted_image)),].decode("utf-8") +  "\" picture.")
 
 
-def resize_image():
-    # Use the function to resize your image
-    image_dir = "images/CAT_00/"
-    # Get a list of all files in the directory
-    image_files = os.listdir(image_dir)
 
-    # Filter the list for files ending with '.jpg' and starting with '0000000'
-    image_files = [f for f in image_files if f.endswith('.jpg')]
+# def resize_image():
+#     # Use the function to resize your image
+#     image_dir = "images/CAT_00/"
+#     # Get a list of all files in the directory
+#     image_files = os.listdir(image_dir)
 
-    # Iterate over the image files
-    for image_file in image_files:
-        # Full path to the image file
-        fname = os.path.join(image_dir, image_file)
-        input_image_path = fname
-        output_image_path = fname
+#     # Filter the list for files ending with '.jpg' and starting with '0000000'
+#     image_files = [f for f in image_files if f.endswith('.jpg')]
 
-        size = (64, 64)
+#     # Iterate over the image files
+#     for image_file in image_files:
+#         # Full path to the image file
+#         fname = os.path.join(image_dir, image_file)
+#         input_image_path = fname
+#         output_image_path = fname
 
-        original_image = Image.open(input_image_path)
-        width, height = original_image.size
-        print(f"The original image size is {width} wide x {height} tall")
+#         size = (64, 64)
 
-        resized_image = original_image.resize(size)
-        width, height = resized_image.size
-        print(f"The resized image size is {width} wide x {height} tall")
-        # resized_image.show()
+#         original_image = Image.open(input_image_path)
+#         width, height = original_image.size
+#         print(f"The original image size is {width} wide x {height} tall")
 
-        # Save the resized image to the output path
-        resized_image.save(output_image_path)
+#         resized_image = original_image.resize(size)
+#         width, height = resized_image.size
+#         print(f"The resized image size is {width} wide x {height} tall")
+#         # resized_image.show()
+
+#         # Save the resized image to the output path
+#         resized_image.save(output_image_path)
 
 
 
+# %%
+# train_x_orig, train_y, test_x_orig, test_y, classes = load_data()
+
+# train_x = train_x_orig.reshape(train_x_orig.shape[0], -1).T
+# train_x = train_x / 255
+# test_x = test_x_orig.reshape(test_x_orig.shape[0], -1).T
+# test_x = test_x / 255
+
+train_x, train_y = load_train_x_and_y()
+test_x, test_y = load_test_x_and_y()
+
+# L = 4 excluding the input feature X in layer [0]
+# [12288, 20, 7, 5, 1]
+# np.random.seed(1)
+layers_dims = [train_x.shape[0], 20, 7, 5, 1]
+
+parameters = L_layer_model(train_x, train_y, layers_dims, num_iterations=2500, print_cost=True)
+
+
+# %%
 pred_train = predict(train_x, train_y, parameters)
 pred_test = predict(test_x, test_y, parameters)
 
@@ -434,6 +468,6 @@ pred_test = predict(test_x, test_y, parameters)
 
 # test_image("cat_body.jpg", 1)
 # test_image("my_image.jpg", 1)
-test_cat()
-# resize_image()
+
+
 
