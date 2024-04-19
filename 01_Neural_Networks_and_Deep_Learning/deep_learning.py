@@ -303,7 +303,7 @@ def predict(X, y, parameters):
     
     # Forward propagation
     probas, caches = L_model_forward(X, parameters)
-    print(probas)
+    # print(probas)
     
     # convert probas to 0/1 predictions
     for i in range(0, probas.shape[1]):
@@ -314,7 +314,7 @@ def predict(X, y, parameters):
     
     #print results
     # print ("predictions: " + str(p))
-    # print ("true labels: " + str(y))
+    # print ("true labels: " + str(y)
     print("Accuracy: "  + str(np.sum((p == y)/m)))
         
     return p
@@ -346,7 +346,7 @@ def convert_to_matrix(x, y, image_dir, num_px, my_label_y, offset):
 def load_test_x_and_y():
     """
     return
-    'test_x' (12288, 100) where 35 is non-cat
+    'test_x' (12288, 100) where 50 is non-cat
     'test_y' (1, 100)
     """
     num_px = 64
@@ -354,15 +354,15 @@ def load_test_x_and_y():
     test_x = np.zeros((num_px * num_px * 3, 100))
     test_y = np.zeros((1, 100))
 
-    test_x, test_y = convert_to_matrix(test_x, test_y, "images/cat_test/", num_px, my_label_y=1, offset=0)
-    test_x, test_y = convert_to_matrix(test_x, test_y, "images/noncat_test", num_px, my_label_y=0, offset=65)
+    test_x, test_y = convert_to_matrix(test_x, test_y, "images/test/cat/", num_px, my_label_y=1, offset=0)
+    test_x, test_y = convert_to_matrix(test_x, test_y, "images/test/noncat/", num_px, my_label_y=0, offset=50)
 
     return test_x, test_y
 
 def load_train_x_and_y():
     """
     return
-    'train_x' (12288, 400) where 100 is non-cat
+    'train_x' (12288, 400) where 200 is non-cat
     'train_y' (1, 400)
     """
     num_px = 64
@@ -370,8 +370,8 @@ def load_train_x_and_y():
     train_x = np.zeros((num_px * num_px * 3, 400))
     train_y = np.zeros((1, 400))
 
-    train_x, train_y = convert_to_matrix(train_x, train_y, "images/cat_train/", num_px, my_label_y=1, offset=0)
-    train_x, train_y = convert_to_matrix(train_x, train_y, "images/noncat_train", num_px, my_label_y=0, offset=300)
+    train_x, train_y = convert_to_matrix(train_x, train_y, "images/train/cat/", num_px, my_label_y=1, offset=0)
+    train_x, train_y = convert_to_matrix(train_x, train_y, "images/train/noncat/", num_px, my_label_y=0, offset=200)
 
     return train_x, train_y
 
@@ -404,41 +404,51 @@ def test_image(my_image, my_label_y):
 
 
 
-# def resize_image():
-#     # Use the function to resize your image
-#     image_dir = "images/CAT_00/"
-#     # Get a list of all files in the directory
-#     image_files = os.listdir(image_dir)
+def resize_image():
+    # Use the function to resize your image
+    image_dirs = ["images/test/cat",
+                  "images/test/noncat",
+                  "images/train/cat",
+                  "images/train/noncat"]
+    # Get a list of all files in the directory
 
-#     # Filter the list for files ending with '.jpg' and starting with '0000000'
-#     image_files = [f for f in image_files if f.endswith('.jpg')]
+    for image_dir in image_dirs:
+        image_files = os.listdir(image_dir)
 
-#     # Iterate over the image files
-#     for image_file in image_files:
-#         # Full path to the image file
-#         fname = os.path.join(image_dir, image_file)
-#         input_image_path = fname
-#         output_image_path = fname
+        # Filter the list for files ending with '.jpg' and starting with '0000000'
+        image_files = [f for f in image_files if f.endswith('.jpg')]
 
-#         size = (64, 64)
+        # Iterate over the image files
+        for image_file in image_files:
+            # Full path to the image file
+            fname = os.path.join(image_dir, image_file)
+            input_image_path = fname
+            output_image_path = fname
 
-#         original_image = Image.open(input_image_path)
-#         width, height = original_image.size
-#         print(f"The original image size is {width} wide x {height} tall")
+            size = (64, 64)
 
-#         resized_image = original_image.resize(size)
-#         width, height = resized_image.size
-#         print(f"The resized image size is {width} wide x {height} tall")
-#         # resized_image.show()
+            original_image = Image.open(input_image_path)
+            width, height = original_image.size
+            print(f"The original image size is {width} wide x {height} tall")
 
-#         # Save the resized image to the output path
-#         resized_image.save(output_image_path)
+            resized_image = original_image.resize(size)
+            width, height = resized_image.size
+            print(f"The resized image size is {width} wide x {height} tall")
+            # resized_image.show()
 
+            # Save the resized image to the output path
+            resized_image.save(output_image_path)
+
+
+def preprocess_images(x):
+    mean = x.mean(axis=0)
+    std_dev = x.std(axis=0)
+    x = (x - mean) / std_dev
+    return x
 
 
 # %%
 # train_x_orig, train_y, test_x_orig, test_y, classes = load_data()
-
 # train_x = train_x_orig.reshape(train_x_orig.shape[0], -1).T
 # train_x = train_x / 255
 # test_x = test_x_orig.reshape(test_x_orig.shape[0], -1).T
@@ -447,27 +457,51 @@ def test_image(my_image, my_label_y):
 train_x, train_y = load_train_x_and_y()
 test_x, test_y = load_test_x_and_y()
 
+train_x = preprocess_images(train_x)
+test_x = preprocess_images(test_x)
+
+# %%
+print(train_x.shape)
+print(train_y.shape)
+
+print(test_x.shape)
+print(test_y.shape)
+
+
+# %%
 # L = 4 excluding the input feature X in layer [0]
 # [12288, 20, 7, 5, 1]
 # np.random.seed(1)
-layers_dims = [train_x.shape[0], 20, 7, 5, 1]
+# layers_dims = [train_x.shape[0], 20, 7, 5, 1]
+layers_dims = [train_x.shape[0], 20, 7, 1]
 
-parameters = L_layer_model(train_x, train_y, layers_dims, num_iterations=2500, print_cost=True)
+parameters = L_layer_model(train_x, train_y, layers_dims, learning_rate=.0075, num_iterations=2500, print_cost=True)
 
 
 # %%
 pred_train = predict(train_x, train_y, parameters)
 pred_test = predict(test_x, test_y, parameters)
 
+
+# %%
+
 ### Example of a picture ###
-# index = 20
+# train_x_orig, train_y_orig, test_x_orig, test_y_orig, classes = load_data()
+
+# Standardize data to have feature values between 0 and 1.
+# index = 16
 # plt.imshow(test_x_orig[index])
-# print ("y = " + str(test_y[0,index]) + ". It's a " + classes[test_y[0,index]].decode("utf-8") +  " picture.")
-# my_predicted_image = predict(test_x[:,index].reshape(12288,1), [test_y[0,index]], parameters)
+# print ("y = " + str(test_y_orig[0,index]) + ". It's a " + classes[test_y_orig[0,index]].decode("utf-8") +  " picture.")
+# my_predicted_image = predict(test_x[:,index].reshape(12288,1), [test_y_orig[0,index]], parameters)
 # print ("y = " + str(np.squeeze(my_predicted_image)) + ", your L-layer model predicts a \"" + classes[int(np.squeeze(my_predicted_image)),].decode("utf-8") +  "\" picture.")
 
 # test_image("cat_body.jpg", 1)
-# test_image("my_image.jpg", 1)
+test_image("my_image.jpg", 1)
+# test_image("weird_cat.jpg", 1)
+# test_image("gargouille.jpg", 1)
+# test_image("test/cat/00000001_000.jpg", 1)
+# test_image("test/noncat/horse-60.jpg", 0)
+test_image("train/cat/cat.99.jpg", 1)
 
 
 
