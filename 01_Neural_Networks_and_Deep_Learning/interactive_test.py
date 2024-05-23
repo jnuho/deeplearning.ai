@@ -17,48 +17,48 @@ plt.rcParams['image.cmap'] = 'gray'
 np.random.seed(1)
 
 def init_parameters_deep(layer_dims):
-  """
-  layer_dims is a list of dimension for each layer
-  l = 1,...,L
-  """
-  L = len(layer_dims)
+    """
+    layer_dims is a list of dimension for each layer
+    l = 1,...,L
+    """
+    L = len(layer_dims)
 
-  parameters = {}
-  for l in range(1,L):
-    parameters["W" +str(l)] = np.random.randn(layer_dims[l], layer_dims[l-1])
-    parameters["b" +str(l)] = np.zeros((layer_dims[l], 1))
-  
-  return parameters
+    parameters = {}
+    for l in range(1,L):
+        parameters["W" +str(l)] = np.random.randn(layer_dims[l], layer_dims[l-1])
+        parameters["b" +str(l)] = np.zeros((layer_dims[l], 1))
+    
+    return parameters
 
 def linear_forward(A, W, b):
-  Z = np.dot(W,A) + b
-  cache = (A, W, b)
+    Z = np.dot(W,A) + b
+    cache = (A, W, b)
 
-  return Z, cache
+    return Z, cache
 
 # vector wise
 def relu(x):
-  return np.maximum(0, x)
+    return np.maximum(0, x)
 
 def sigmoid(x):
-  return 1/(1+np.exp(-x))
+    return 1/(1+np.exp(-x))
 
 def linear_activation_forward(A_prev, W, b, activation):
-  
-  Z, cache = linear_forward(A_prev, W, b)
-  if activation == "relu":
+    
+    Z, cache = linear_forward(A_prev, W, b)
+    if activation == "relu":
 
-  elif activation == "sigmoid"
+    elif activation == "sigmoid"
 
 
 
 if __name__=="__main__":
-  layer_dims = [5,3,1]
-  # Wi, bi for i=1,...,L-1
-  parameters = init_parameters_deep(layer_dims)
-  # linear forwad
-  # z = wx +b
-  # linear activation forward
-  # a = sigma(z)
+    layer_dims = [5,3,1]
+    # Wi, bi for i=1,...,L-1
+    parameters = init_parameters_deep(layer_dims)
+    # linear forwad
+    # z = wx +b
+    # linear activation forward
+    # a = sigma(z)
 
-  print(parameters)
+    print(parameters)

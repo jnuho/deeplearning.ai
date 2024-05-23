@@ -18,18 +18,18 @@ np.random.seed(1)
 
 
 def L_model_forward(X, parameters):
-  A = X
-  cache = []
+    A = X
+    cache = []
 
-  AL = None
+    AL = None
 
-  return AL, cache
+    return AL, cache
 
 
 
 if __name__=="__main__":
-  X = np.random.randn(1,3)
-  print(X)
+    X = np.random.randn(1,3)
+    print(X)
 
 # Turn on interactive mode
 plt.ion()
